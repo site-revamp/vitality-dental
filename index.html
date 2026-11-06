@@ -5,65 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Private Dentist in Pulborough | Vitality Dental</title>
-  <meta name="description" content="Discover relaxed private dental care at Vitality Dental in Pulborough. Explore family, cosmetic and specialist dentistry. New patients welcome.">
+
+  <meta name="description" content="Discover patient-centred private dentistry at Vitality Dental in Pulborough, West Sussex. General, cosmetic and specialist dental care. Book online.">
+
+  <meta name="theme-color" content="#FAF8F4">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://vitality-dental.co.uk/">
 
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Vitality Dental | Modern, Relaxed Dentistry in Pulborough">
-  <meta property="og:description" content="Thoughtful private dental care for individuals and families in Pulborough and across West Sussex.">
-  <meta property="og:url" content="https://vitality-dental.co.uk/">
-
-  <meta name="theme-color" content="#FAF8F5">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --color-primary: #806A57;
-      --color-primary-dark: #5F4D3F;
-      --color-primary-light: #B6A494;
+      --color-primary: #80664F;
+      --color-primary-dark: #594332;
+      --color-primary-light: #B59B83;
 
-      --color-secondary: #A5B8C7;
-      --color-secondary-dark: #718B9E;
-      --color-secondary-light: #E1EAF0;
+      --color-secondary: #9EB5C6;
+      --color-secondary-dark: #718DA3;
+      --color-secondary-light: #DCE7ED;
 
-      --color-accent: #B58D6B;
+      --color-accent: #C5A77C;
 
-      --color-heading: #302C29;
-      --color-text: #55514D;
-      --color-text-muted: #817B75;
+      --color-heading: #302B28;
+      --color-text: #625B55;
+      --color-text-muted: #89817A;
 
-      --color-background: #FAF8F5;
-      --color-background-alt: #F0ECE6;
+      --color-background: #FAF8F4;
+      --color-background-alt: #F0ECE5;
 
       --color-surface: #FFFFFF;
-      --color-surface-alt: #E8EEF1;
+      --color-surface-alt: #EAEFF1;
 
-      --color-border: #E5DED6;
-      --color-border-strong: #C8BDB1;
+      --color-border: #E4DED5;
+      --color-border-strong: #C9BFB3;
 
-      --color-interactive: #806A57;
-      --color-interactive-hover: #5F4D3F;
-      --color-focus: #547D99;
+      --color-interactive: #594332;
+      --color-interactive-hover: #403024;
+      --color-focus: #426D88;
 
       --font-heading: "Cormorant Garamond", Georgia, serif;
-      --font-body: "DM Sans", Arial, sans-serif;
+      --font-body: "Manrope", Arial, sans-serif;
 
       --container: 1300px;
-      --page-gutter: 24px;
-      --section-space: clamp(76px, 9vw, 126px);
-      --shadow-soft: 0 22px 65px rgba(48, 44, 41, 0.09);
-      --shadow-small: 0 10px 30px rgba(48, 44, 41, 0.07);
-      --radius-large: 28px;
-      --radius-medium: 16px;
+      --page-gutter: 10px;
+
+      --space-section: 100px;
+      --radius-small: 8px;
+      --radius-medium: 18px;
+      --radius-large: 32px;
+
+      --shadow-soft: 0 18px 55px rgba(48,43,40,.07);
+      --shadow-deep: 0 25px 75px rgba(48,43,40,.12);
+
+      --transition: .3s ease;
     }
 
-    *,
-    *::before,
-    *::after {
+    *, *::before, *::after {
       box-sizing: border-box;
     }
 
@@ -78,16 +77,16 @@
       color: var(--color-text);
       font-family: var(--font-body);
       font-size: 16px;
-      line-height: 1.7;
+      line-height: 1.75;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
-    body.menu-open {
-      overflow: hidden;
+    body, button, a {
+      font-family: var(--font-body);
     }
 
-    img {
-      display: block;
+    img, svg {
       max-width: 100%;
     }
 
@@ -97,12 +96,7 @@
     }
 
     button {
-      font: inherit;
-    }
-
-    button,
-    a {
-      -webkit-tap-highlight-color: transparent;
+      color: inherit;
     }
 
     a:focus-visible,
@@ -111,334 +105,252 @@
       outline-offset: 4px;
     }
 
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
     .container {
-      width: min(var(--container), calc(100% - 2 * var(--page-gutter)));
+      width: min(calc(100% - 40px), var(--container));
       margin-inline: auto;
     }
 
     .section {
-      padding-block: var(--section-space);
+      padding-block: var(--space-section);
+      position: relative;
     }
 
-    .section-label {
+    .section-kicker {
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      margin: 0 0 20px;
       color: var(--color-primary);
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.17em;
-      line-height: 1.4;
+      letter-spacing: .18em;
       text-transform: uppercase;
     }
 
-    .section-label::before {
-      width: 28px;
-      height: 1px;
-      background: var(--color-accent);
+    .section-kicker::before {
       content: "";
+      display: block;
+      width: 30px;
+      height: 1px;
+      background: var(--color-primary-light);
     }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    p {
-      margin-top: 0;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4 {
+    .heading {
+      margin: 16px 0 20px;
       color: var(--color-heading);
       font-family: var(--font-heading);
+      font-size: clamp(42px, 5vw, 66px);
       font-weight: 500;
-      line-height: 1.03;
+      line-height: .99;
+      letter-spacing: -.035em;
     }
 
-    h1 {
-      max-width: 760px;
-      margin-bottom: 25px;
-      font-size: clamp(44px, 6.3vw, 78px);
-      letter-spacing: -0.035em;
-    }
-
-    h2 {
-      margin-bottom: 22px;
-      font-size: clamp(38px, 4.6vw, 58px);
-      letter-spacing: -0.025em;
-    }
-
-    h3 {
-      margin-bottom: 12px;
-      font-size: clamp(25px, 2.4vw, 32px);
-    }
-
-    h4 {
-      margin-bottom: 10px;
-      font-size: 23px;
-    }
-
-    p {
-      margin-bottom: 18px;
+    .heading em {
+      color: var(--color-primary);
+      font-weight: 400;
     }
 
     .lead {
-      max-width: 660px;
-      color: var(--color-text);
-      font-size: clamp(16px, 1.5vw, 19px);
-      line-height: 1.8;
+      max-width: 610px;
+      font-size: 16px;
+      line-height: 1.9;
     }
 
-    .muted {
+    .small-note {
       color: var(--color-text-muted);
+      font-size: 12px;
+      line-height: 1.7;
     }
 
-    .button {
+    .btn {
       display: inline-flex;
-      min-height: 54px;
       align-items: center;
       justify-content: center;
-      gap: 12px;
-      padding: 14px 24px;
+      gap: 11px;
+      min-height: 54px;
+      padding: 13px 23px;
       border: 1px solid transparent;
-      border-radius: 999px;
-      background: var(--color-primary);
-      color: #FFFFFF;
-      cursor: pointer;
-      font-size: 14px;
+      border-radius: 3px;
+      font-size: 13px;
       font-weight: 700;
-      letter-spacing: 0.015em;
-      line-height: 1.2;
-      transition: background 180ms ease, color 180ms ease, transform 180ms ease, border-color 180ms ease;
+      transition:
+        background var(--transition),
+        color var(--transition),
+        transform var(--transition);
+      cursor: pointer;
     }
 
-    .button:hover {
+    .btn:hover {
       transform: translateY(-2px);
+    }
+
+    .btn-primary {
       background: var(--color-primary-dark);
+      color: white;
     }
 
-    .button-light {
+    .btn-primary:hover {
+      background: var(--color-interactive-hover);
+    }
+
+    .btn-outline {
       border-color: var(--color-border-strong);
+      color: var(--color-heading);
       background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: var(--color-background-alt);
+    }
+
+    .btn-light {
+      background: var(--color-background);
       color: var(--color-primary-dark);
     }
 
-    .button-light:hover {
-      border-color: var(--color-primary);
-      background: var(--color-primary);
-      color: #FFFFFF;
-    }
-
-    .button-white {
-      background: #FFFFFF;
-      color: var(--color-primary-dark);
-    }
-
-    .button-white:hover {
-      background: var(--color-secondary-light);
-      color: var(--color-primary-dark);
-    }
-
-    .button-arrow {
-      font-size: 18px;
+    .arrow {
+      font-size: 17px;
       line-height: 1;
     }
 
-    /* Announcement strip */
+    /* Announcement and navigation */
 
-    .topline {
-      padding: 9px 16px;
+    .top-strip {
+      padding: 9px 15px;
       background: var(--color-primary-dark);
-      color: #FFFFFF;
+      color: white;
       text-align: center;
-      font-size: 12px;
-      letter-spacing: 0.035em;
+      font-size: 10px;
+      letter-spacing: .08em;
     }
 
-    .topline a {
-      margin-left: 8px;
-      color: #E8D9CB;
-      font-weight: 700;
+    .top-strip a {
       text-decoration: underline;
       text-underline-offset: 3px;
     }
 
-    /* Header */
-
     .site-header {
       position: sticky;
-      z-index: 1000;
       top: 0;
-      border-bottom: 1px solid rgba(200, 189, 177, 0.55);
-      background: rgba(250, 248, 245, 0.96);
+      z-index: 1000;
+      background: rgba(250,248,244,.96);
+      border-bottom: 1px solid rgba(201,191,179,.4);
       backdrop-filter: blur(14px);
     }
 
-    .header-inner {
+    .nav-wrap {
+      min-height: 86px;
       display: flex;
-      min-height: 92px;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: 25px;
     }
 
     .brand {
-      display: inline-flex;
-      flex: 0 0 auto;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .brand-mark {
-      display: grid;
-      width: 42px;
-      height: 42px;
-      place-items: center;
-      border: 1px solid var(--color-primary-light);
-      border-radius: 50%;
-      color: var(--color-primary);
-      font-family: var(--font-heading);
-      font-size: 28px;
-      line-height: 1;
+      display: flex;
+      flex-direction: column;
+      min-width: 180px;
     }
 
     .brand-name {
-      display: flex;
-      flex-direction: column;
-      color: var(--color-primary-dark);
+      color: var(--color-primary);
       font-family: var(--font-heading);
-      font-size: 29px;
+      font-size: 38px;
       font-weight: 600;
-      letter-spacing: 0.01em;
-      line-height: 0.9;
+      line-height: .9;
+      letter-spacing: .015em;
     }
 
-    .brand-name small {
+    .brand-tagline {
       margin-top: 7px;
       color: var(--color-secondary-dark);
-      font-family: var(--font-body);
       font-size: 8px;
       font-weight: 700;
-      letter-spacing: 0.22em;
+      letter-spacing: .2em;
       text-transform: uppercase;
     }
 
-    .main-nav {
+    .nav-links {
       display: flex;
       align-items: center;
-      gap: clamp(16px, 2.1vw, 30px);
+      gap: clamp(15px, 2.2vw, 32px);
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
 
-    .main-nav a {
+    .nav-links a {
       color: var(--color-heading);
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
-      transition: color 160ms ease;
+      transition: color var(--transition);
     }
 
-    .main-nav a:hover {
+    .nav-links a:hover {
       color: var(--color-primary);
     }
 
-    .header-actions {
+    .nav-actions {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 15px;
     }
 
-    .header-phone {
-      color: var(--color-primary-dark);
-      font-size: 13px;
+    .nav-phone {
+      color: var(--color-heading);
+      font-size: 12px;
       font-weight: 700;
       white-space: nowrap;
     }
 
-    .header-actions .button {
+    .nav-book {
       min-height: 46px;
-      padding: 12px 19px;
-      font-size: 12px;
+      padding: 10px 17px;
+      font-size: 11px;
     }
 
     .menu-toggle {
       display: none;
-      width: 46px;
-      height: 46px;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid var(--color-border-strong);
-      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      padding: 10px;
       background: transparent;
-      color: var(--color-primary-dark);
+      border: 1px solid var(--color-border);
       cursor: pointer;
     }
 
-    .menu-toggle span,
-    .menu-toggle span::before,
-    .menu-toggle span::after {
-      display: block;
-      width: 18px;
-      height: 2px;
-      border-radius: 2px;
-      background: currentColor;
-      transition: transform 180ms ease;
-    }
-
     .menu-toggle span {
-      position: relative;
-    }
-
-    .menu-toggle span::before,
-    .menu-toggle span::after {
-      position: absolute;
-      left: 0;
-      content: "";
-    }
-
-    .menu-toggle span::before {
-      top: -6px;
-    }
-
-    .menu-toggle span::after {
-      top: 6px;
-    }
-
-    .menu-toggle[aria-expanded="true"] span {
-      background: transparent;
-    }
-
-    .menu-toggle[aria-expanded="true"] span::before {
-      top: 0;
-      transform: rotate(45deg);
-    }
-
-    .menu-toggle[aria-expanded="true"] span::after {
-      top: 0;
-      transform: rotate(-45deg);
+      display: block;
+      width: 20px;
+      height: 1px;
+      margin: 5px auto;
+      background: var(--color-heading);
     }
 
     /* Hero */
 
     .hero {
+      min-height: 680px;
+      padding: 62px 0 85px;
       position: relative;
       overflow: hidden;
-      padding-block: clamp(58px, 8vw, 105px) clamp(72px, 9vw, 118px);
       background:
-        radial-gradient(circle at 7% 12%, rgba(165, 184, 199, 0.20), transparent 28%),
-        linear-gradient(115deg, #FAF8F5 0%, #F5F0E9 57%, #E8EEF1 100%);
+        radial-gradient(ellipse at 85% 15%, rgba(158,181,198,.25), transparent 35%),
+        var(--color-background);
     }
 
-    .hero::after {
+    .hero::before {
+      content: "V";
       position: absolute;
-      right: -160px;
-      bottom: -290px;
-      width: 590px;
-      height: 590px;
-      border: 1px solid rgba(128, 106, 87, 0.15);
-      border-radius: 50%;
-      content: "";
+      top: -160px;
+      right: -40px;
+      color: rgba(128,102,79,.035);
+      font-family: var(--font-heading);
+      font-size: 680px;
+      line-height: 1;
       pointer-events: none;
     }
 
@@ -446,13 +358,42 @@
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: minmax(0, 1.03fr) minmax(360px, 0.97fr);
+      grid-template-columns: .92fr 1.08fr;
+      gap: 45px;
       align-items: center;
-      gap: clamp(38px, 6vw, 90px);
     }
 
     .hero-copy {
-      padding-block: 18px;
+      padding-block: 35px;
+    }
+
+    .hero-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--color-primary);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .19em;
+      text-transform: uppercase;
+    }
+
+    .hero-label::before {
+      content: "";
+      width: 32px;
+      height: 1px;
+      background: var(--color-accent);
+    }
+
+    .hero h1 {
+      max-width: 610px;
+      margin: 25px 0;
+      color: var(--color-heading);
+      font-family: var(--font-heading);
+      font-size: clamp(58px, 7vw, 91px);
+      font-weight: 500;
+      line-height: .91;
+      letter-spacing: -.045em;
     }
 
     .hero h1 em {
@@ -460,1186 +401,1207 @@
       font-weight: 400;
     }
 
-    .hero-copy .lead {
-      max-width: 590px;
-      margin-bottom: 32px;
+    .hero-description {
+      max-width: 485px;
+      font-size: 15px;
+      line-height: 1.95;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-bottom: 35px;
+      margin-top: 32px;
+    }
+
+    .hero-trust {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 38px;
+      padding-top: 25px;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .hero-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--color-heading);
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .trust-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--color-secondary-dark);
+    }
+
+    .hero-art {
+      min-height: 545px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-art::before {
+      content: "";
+      position: absolute;
+      width: 85%;
+      aspect-ratio: 1;
+      border: 1px solid rgba(128,102,79,.23);
+      border-radius: 50%;
+    }
+
+    .hero-art::after {
+      content: "";
+      position: absolute;
+      width: 68%;
+      aspect-ratio: 1;
+      border: 1px solid rgba(158,181,198,.6);
+      border-radius: 50%;
+    }
+
+    .art-circle {
+      position: absolute;
+      border-radius: 50%;
+      background: var(--color-secondary-light);
+      opacity: .85;
+    }
+
+    .art-circle.one {
+      width: 90px;
+      height: 90px;
+      top: 55px;
+      right: 45px;
+    }
+
+    .art-circle.two {
+      width: 35px;
+      height: 35px;
+      bottom: 80px;
+      left: 40px;
+      background: var(--color-accent);
+    }
+
+    .hero-illustration {
+      position: relative;
+      z-index: 2;
+      width: 92%;
+      filter: drop-shadow(0 25px 30px rgba(48,43,40,.08));
     }
 
     .hero-note {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--color-text-muted);
-      font-size: 13px;
-    }
-
-    .hero-note-mark {
-      display: grid;
-      width: 34px;
-      height: 34px;
-      flex: 0 0 auto;
-      place-items: center;
-      border: 1px solid var(--color-primary-light);
-      border-radius: 50%;
-      color: var(--color-primary);
-      font-size: 17px;
-    }
-
-    .hero-visual {
-      position: relative;
-      min-height: 540px;
-    }
-
-    .hero-image {
       position: absolute;
-      top: 0;
+      z-index: 3;
+      bottom: 30px;
       right: 0;
-      width: 87%;
-      height: 500px;
-      overflow: hidden;
-      border-radius: 190px 190px 24px 24px;
-      background: #D7E0E3;
+      max-width: 215px;
+      padding: 19px 22px;
+      background: white;
       box-shadow: var(--shadow-soft);
     }
 
-    .hero-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .hero-image::after {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 55%, rgba(48, 44, 41, 0.20));
-      content: "";
-    }
-
-    .hero-stamp {
-      position: absolute;
-      z-index: 2;
-      right: -6px;
-      bottom: 0;
-      display: grid;
-      width: 155px;
-      height: 155px;
-      align-content: center;
-      justify-items: center;
-      border: 9px solid var(--color-background);
-      border-radius: 50%;
-      background: var(--color-primary);
-      color: #FFFFFF;
-      text-align: center;
-      box-shadow: var(--shadow-small);
-    }
-
-    .hero-stamp strong {
+    .hero-note strong {
+      display: block;
+      color: var(--color-primary);
       font-family: var(--font-heading);
-      font-size: 39px;
-      font-weight: 500;
-      line-height: 1;
+      font-size: 24px;
+      font-weight: 600;
     }
 
-    .hero-stamp span {
-      max-width: 95px;
-      margin-top: 7px;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      line-height: 1.4;
-      text-transform: uppercase;
+    .hero-note span {
+      font-size: 10px;
+      line-height: 1.6;
     }
 
-    .hero-caption {
-      position: absolute;
-      right: 15px;
-      bottom: 25px;
-      z-index: 3;
-      color: #FFFFFF;
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+    /* Reassurance strip */
+
+    .reassurance {
+      background: var(--color-primary-dark);
+      color: white;
+      padding: 25px 0;
     }
 
-    /* Trust ribbon */
-
-    .trust-ribbon {
-      position: relative;
-      z-index: 3;
-      background: #FFFFFF;
-      box-shadow: 0 12px 35px rgba(48, 44, 41, 0.055);
-    }
-
-    .trust-inner {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      align-items: center;
-    }
-
-    .trust-item {
+    .reassurance-inner {
       display: flex;
-      min-height: 112px;
       align-items: center;
-      justify-content: center;
-      gap: 13px;
-      padding: 18px;
-      border-right: 1px solid var(--color-border);
+      justify-content: space-between;
+      gap: 25px;
+      flex-wrap: wrap;
     }
 
-    .trust-item:last-child {
-      border-right: 0;
-    }
-
-    .trust-symbol {
-      display: grid;
-      width: 42px;
-      height: 42px;
-      flex: 0 0 auto;
-      place-items: center;
-      border-radius: 50%;
-      background: var(--color-secondary-light);
-      color: var(--color-primary-dark);
+    .reassurance strong {
       font-family: var(--font-heading);
-      font-size: 22px;
+      font-size: 25px;
+      font-weight: 500;
     }
 
-    .trust-item strong {
-      display: block;
-      color: var(--color-heading);
-      font-size: 13px;
-      line-height: 1.4;
+    .reassurance p {
+      margin: 0;
+      color: rgba(255,255,255,.76);
+      font-size: 12px;
     }
 
-    .trust-item span {
-      display: block;
-      margin-top: 3px;
-      color: var(--color-text-muted);
-      font-size: 11px;
-      line-height: 1.4;
+    .reassurance a {
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 5px;
     }
 
     /* Intro */
 
     .intro-grid {
       display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: clamp(40px, 8vw, 120px);
+      grid-template-columns: .85fr 1.15fr;
+      gap: 85px;
       align-items: start;
     }
 
     .intro-aside {
-      position: relative;
-      padding: 35px 34px 34px;
-      border-left: 2px solid var(--color-accent);
-      background: var(--color-background-alt);
+      padding-top: 35px;
     }
 
-    .intro-aside p {
-      margin-bottom: 0;
-      color: var(--color-primary-dark);
+    .intro-mark {
+      display: block;
+      color: var(--color-secondary);
+      font-family: var(--font-heading);
+      font-size: 155px;
+      line-height: .8;
+      font-weight: 500;
+    }
+
+    .intro-copy {
+      max-width: 720px;
+    }
+
+    .intro-copy p {
+      font-size: 15px;
+      line-height: 2;
+    }
+
+    .intro-signature {
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 1px solid var(--color-border);
+      color: var(--color-primary);
       font-family: var(--font-heading);
       font-size: 27px;
-      line-height: 1.3;
-    }
-
-    .intro-main p {
-      max-width: 730px;
-    }
-
-    .text-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-top: 9px;
-      color: var(--color-primary-dark);
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .text-link span {
-      transition: transform 160ms ease;
-    }
-
-    .text-link:hover span {
-      transform: translateX(4px);
     }
 
     /* Six custom icons */
 
-    .treatment-section {
-      overflow: hidden;
+    .capabilities {
       background: var(--color-background-alt);
+      overflow: hidden;
     }
 
-    .section-heading-row {
+    .capabilities-header {
       display: flex;
       align-items: end;
       justify-content: space-between;
-      gap: 35px;
-      margin-bottom: 48px;
+      gap: 30px;
+      margin-bottom: 60px;
     }
 
-    .section-heading-row > div:first-child {
-      max-width: 680px;
+    .capabilities-header .lead {
+      max-width: 390px;
     }
 
-    .section-heading-row p {
-      max-width: 420px;
-      margin-bottom: 7px;
-      color: var(--color-text-muted);
-      font-size: 14px;
-    }
-
-    .treatment-grid {
+    .icon-row {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0,1fr));
       gap: 20px;
     }
 
-    .treatment-item {
+    .icon-item {
       position: relative;
-      display: flex;
-      min-height: 245px;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 28px;
+      min-height: 235px;
+      padding: 27px 24px;
       border-top: 1px solid var(--color-border-strong);
-      background: rgba(255, 255, 255, 0.56);
-      transition: transform 180ms ease, background 180ms ease;
     }
 
-    .treatment-item:hover {
-      transform: translateY(-5px);
-      background: #FFFFFF;
+    .icon-item:nth-child(2),
+    .icon-item:nth-child(5) {
+      background: rgba(255,255,255,.46);
     }
 
-    .treatment-icon {
-      display: grid;
-      width: 66px;
-      height: 66px;
-      margin-bottom: 23px;
-      place-items: center;
-      border-radius: 50%;
-      background: var(--color-secondary-light);
-      color: var(--color-primary-dark);
+    .icon-art {
+      display: block;
+      width: 68px;
+      height: 68px;
+      margin-bottom: 20px;
+      color: var(--color-primary);
     }
 
-    .treatment-icon svg {
-      width: 37px;
-      height: 37px;
-      fill: none;
-      stroke: currentColor;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      stroke-width: 1.55;
+    .icon-number {
+      position: absolute;
+      top: 27px;
+      right: 20px;
+      color: var(--color-primary-light);
+      font-family: var(--font-heading);
+      font-size: 22px;
     }
 
-    .treatment-item p {
-      max-width: 340px;
-      margin-bottom: 18px;
-      color: var(--color-text-muted);
-      font-size: 13px;
-      line-height: 1.7;
+    .icon-item h3 {
+      margin: 0 0 8px;
+      color: var(--color-heading);
+      font-family: var(--font-heading);
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 1.1;
     }
 
-    .treatment-item .text-link {
-      margin-top: auto;
-    }
-
-    .treatment-footnote {
-      margin-top: 28px;
-      color: var(--color-text-muted);
+    .icon-item p {
+      max-width: 300px;
+      margin: 0;
       font-size: 12px;
+      line-height: 1.8;
+    }
+
+    /* Treatment discovery */
+
+    .treatments {
+      background: var(--color-background);
+    }
+
+    .treatments-header {
+      max-width: 730px;
+      margin-bottom: 60px;
+    }
+
+    .treatment-row {
+      display: grid;
+      grid-template-columns: 100px 1fr 1fr 50px;
+      gap: 25px;
+      align-items: center;
+      padding: 32px 12px;
+      border-top: 1px solid var(--color-border);
+      transition: padding var(--transition), background var(--transition);
+    }
+
+    .treatment-row:last-child {
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .treatment-row:hover {
+      padding-inline: 24px;
+      background: white;
+    }
+
+    .treatment-number {
+      color: var(--color-primary-light);
+      font-family: var(--font-heading);
+      font-size: 36px;
+    }
+
+    .treatment-row h3 {
+      margin: 0;
+      color: var(--color-heading);
+      font-family: var(--font-heading);
+      font-size: 31px;
+      font-weight: 500;
+    }
+
+    .treatment-row p {
+      margin: 0;
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .treatment-link {
+      display: flex;
+      width: 42px;
+      height: 42px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--color-border-strong);
+      border-radius: 50%;
+      color: var(--color-primary);
+      font-size: 19px;
+    }
+
+    .treatment-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 35px;
     }
 
     /* Nervous patients */
 
-    .reassurance {
-      position: relative;
+    .nervous {
       overflow: hidden;
-      background: var(--color-primary-dark);
-      color: #FFFFFF;
+      background: var(--color-secondary-light);
     }
 
-    .reassurance::before {
-      position: absolute;
-      top: -180px;
-      left: -140px;
-      width: 440px;
-      height: 440px;
-      border: 1px solid rgba(255, 255, 255, 0.13);
-      border-radius: 50%;
-      content: "";
-    }
-
-    .reassurance-grid {
-      position: relative;
+    .nervous-grid {
       display: grid;
-      grid-template-columns: 1fr 0.92fr;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
       align-items: center;
-      gap: clamp(42px, 8vw, 110px);
     }
 
-    .reassurance h2,
-    .reassurance h3 {
-      color: #FFFFFF;
+    .nervous-art {
+      min-height: 440px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    .reassurance .section-label {
-      color: #D9C7B7;
+    .nervous-art::before {
+      content: "";
+      position: absolute;
+      width: 80%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: rgba(255,255,255,.52);
     }
 
-    .reassurance .section-label::before {
-      background: #D9C7B7;
+    .nervous-art svg {
+      width: 90%;
+      position: relative;
+      z-index: 1;
     }
 
-    .reassurance-copy > p {
-      max-width: 600px;
-      color: rgba(255, 255, 255, 0.78);
+    .nervous-copy {
+      max-width: 570px;
     }
 
-    .reassurance-list {
+    .nervous-copy .heading em {
+      color: var(--color-secondary-dark);
+    }
+
+    .nervous-points {
       display: grid;
-      gap: 16px;
-      margin: 28px 0 32px;
+      gap: 14px;
       padding: 0;
+      margin: 28px 0;
       list-style: none;
     }
 
-    .reassurance-list li {
+    .nervous-points li {
       display: flex;
-      align-items: flex-start;
       gap: 13px;
-      color: rgba(255, 255, 255, 0.92);
-      font-size: 14px;
+      align-items: start;
+      font-size: 13px;
     }
 
-    .reassurance-list li::before {
-      display: grid;
-      width: 23px;
-      height: 23px;
-      flex: 0 0 auto;
-      place-items: center;
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      border-radius: 50%;
-      color: #E6D4C4;
+    .nervous-points li::before {
       content: "✓";
-      font-size: 12px;
-    }
-
-    .reassurance-visual {
-      position: relative;
-      min-height: 480px;
-      padding: 25px;
-      border: 1px solid rgba(255, 255, 255, 0.23);
-      border-radius: 220px 220px 22px 22px;
-      background: linear-gradient(155deg, rgba(165, 184, 199, 0.35), rgba(255, 255, 255, 0.04));
-    }
-
-    .reassurance-visual-inner {
-      display: flex;
-      height: 100%;
-      min-height: 430px;
-      flex-direction: column;
-      justify-content: end;
-      padding: 35px;
-      border-radius: 195px 195px 14px 14px;
-      background:
-        linear-gradient(180deg, rgba(48, 44, 41, 0.05), rgba(48, 44, 41, 0.72)),
-        url("https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1100&q=85") center / cover;
-    }
-
-    .reassurance-visual-inner p {
-      max-width: 330px;
-      margin: 0;
-      color: #FFFFFF;
-      font-family: var(--font-heading);
-      font-size: 32px;
-      line-height: 1.15;
+      color: var(--color-primary-dark);
+      font-weight: 700;
     }
 
     /* Patient journey */
 
-    .journey-section {
-      background: #FFFFFF;
+    .journey {
+      background: var(--color-primary-dark);
+      color: white;
     }
 
-    .journey-intro {
-      max-width: 720px;
-      margin-bottom: 55px;
+    .journey .section-kicker {
+      color: var(--color-secondary-light);
     }
 
-    .journey-line {
+    .journey .section-kicker::before {
+      background: var(--color-accent);
+    }
+
+    .journey .heading {
+      color: white;
+    }
+
+    .journey .heading em {
+      color: var(--color-secondary);
+    }
+
+    .journey .lead {
+      color: rgba(255,255,255,.72);
+    }
+
+    .journey-steps {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-      border-top: 1px solid var(--color-border-strong);
+      grid-template-columns: repeat(4,1fr);
+      margin-top: 60px;
+      border-top: 1px solid rgba(255,255,255,.25);
     }
 
     .journey-step {
-      position: relative;
-      padding: 30px 26px 0 0;
+      padding: 30px 20px 15px;
+      border-right: 1px solid rgba(255,255,255,.18);
     }
 
-    .journey-step::before {
-      position: absolute;
-      top: -6px;
-      left: 0;
-      width: 11px;
-      height: 11px;
-      border: 2px solid var(--color-background);
-      border-radius: 50%;
-      background: var(--color-primary);
-      content: "";
+    .journey-step:first-child {
+      padding-left: 0;
     }
 
-    .journey-number {
-      display: block;
-      margin-bottom: 17px;
-      color: var(--color-primary-light);
+    .journey-step:last-child {
+      border-right: 0;
+    }
+
+    .journey-step span {
+      color: var(--color-secondary);
       font-family: var(--font-heading);
-      font-size: 35px;
-      line-height: 1;
+      font-size: 38px;
+    }
+
+    .journey-step h3 {
+      margin: 14px 0 8px;
+      color: white;
+      font-family: var(--font-heading);
+      font-size: 27px;
+      font-weight: 500;
     }
 
     .journey-step p {
-      max-width: 240px;
-      margin-bottom: 0;
-      color: var(--color-text-muted);
-      font-size: 13px;
-    }
-
-    /* Clinical team */
-
-    .team-section {
-      background:
-        linear-gradient(110deg, #F0ECE6 0%, #FAF8F5 58%, #E8EEF1 100%);
-    }
-
-    .team-grid {
-      display: grid;
-      grid-template-columns: 0.92fr 1.08fr;
-      align-items: center;
-      gap: clamp(40px, 8vw, 105px);
-    }
-
-    .team-visual {
-      position: relative;
-      min-height: 470px;
-      overflow: hidden;
-      border-radius: 180px 180px 20px 20px;
-      background: #D8E1E5;
-    }
-
-    .team-visual img {
-      width: 100%;
-      height: 470px;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .team-copy p {
-      max-width: 600px;
-    }
-
-    .credential-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 13px 25px;
-      margin: 30px 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .credential-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      color: var(--color-primary-dark);
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    .credential-list li::before {
-      color: var(--color-accent);
-      content: "✳";
-      font-size: 15px;
-    }
-
-    .team-note {
-      padding: 18px 20px;
-      border-left: 2px solid var(--color-accent);
-      background: rgba(255, 255, 255, 0.62);
-      color: var(--color-text-muted);
+      margin: 0;
+      color: rgba(255,255,255,.7);
       font-size: 12px;
+      line-height: 1.9;
     }
 
-    /* Reviews */
-
-    .reviews-section {
-      background: #FFFFFF;
-    }
-
-    .reviews-layout {
-      display: grid;
-      grid-template-columns: 0.7fr 1.3fr;
-      gap: clamp(40px, 8vw, 110px);
-      align-items: center;
-    }
-
-    .review-score {
+    .journey-cta {
       display: flex;
       align-items: center;
-      gap: 17px;
-      margin-top: 28px;
+      justify-content: space-between;
+      gap: 25px;
+      margin-top: 50px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,.2);
     }
 
-    .review-score strong {
-      color: var(--color-primary-dark);
+    .journey-cta p {
+      max-width: 470px;
+      margin: 0;
+      font-size: 13px;
+      color: rgba(255,255,255,.75);
+    }
+
+    /* Patient feedback */
+
+    .feedback {
+      background: var(--color-background);
+    }
+
+    .feedback-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 45px;
+    }
+
+    .rating-number {
+      color: var(--color-primary);
       font-family: var(--font-heading);
-      font-size: 58px;
-      font-weight: 500;
+      font-size: 70px;
       line-height: 1;
     }
 
-    .review-score span {
-      display: block;
-      color: var(--color-text-muted);
-      font-size: 12px;
+    .rating-stars {
+      color: var(--color-accent);
+      letter-spacing: .12em;
     }
 
-    .review-stars {
-      color: #B58D6B;
-      letter-spacing: 0.12em;
+    .review-note {
+      max-width: 230px;
+      font-size: 11px;
+      line-height: 1.7;
     }
 
-    .review-feature {
+    .feedback-content {
+      max-width: 900px;
+      padding: 42px;
+      background: white;
+      box-shadow: var(--shadow-soft);
       position: relative;
-      padding: clamp(30px, 5vw, 62px);
-      background: var(--color-background-alt);
     }
 
-    .review-feature::before {
-      position: absolute;
-      top: 18px;
-      left: 27px;
-      color: rgba(128, 106, 87, 0.22);
+    .feedback-content::before {
       content: "“";
+      position: absolute;
+      top: -25px;
+      left: 35px;
+      color: var(--color-secondary);
       font-family: var(--font-heading);
       font-size: 100px;
       line-height: 1;
     }
 
-    .review-feature blockquote {
-      position: relative;
-      margin: 0;
-      color: var(--color-primary-dark);
+    .feedback-content p {
+      margin: 12px 0 25px;
+      color: var(--color-heading);
       font-family: var(--font-heading);
-      font-size: clamp(26px, 3vw, 38px);
-      line-height: 1.2;
+      font-size: clamp(25px, 3vw, 35px);
+      line-height: 1.25;
     }
 
-    .review-disclaimer {
-      margin-top: 20px;
+    .feedback-content span {
       color: var(--color-text-muted);
       font-size: 11px;
+    }
+
+    /* Membership */
+
+    .membership {
+      background: var(--color-background-alt);
+    }
+
+    .membership-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .membership-visual {
+      min-height: 350px;
+      position: relative;
+      overflow: hidden;
+      background: var(--color-primary);
+      color: white;
+      padding: 45px;
+    }
+
+    .membership-visual::before {
+      content: "";
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      border: 1px solid rgba(255,255,255,.3);
+      border-radius: 50%;
+      right: -90px;
+      bottom: -160px;
+    }
+
+    .membership-visual::after {
+      content: "";
+      position: absolute;
+      width: 230px;
+      height: 230px;
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 50%;
+      right: -30px;
+      bottom: -100px;
+    }
+
+    .membership-visual span {
+      position: relative;
+      z-index: 1;
+      color: rgba(255,255,255,.75);
+      font-size: 10px;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+
+    .membership-visual strong {
+      display: block;
+      position: relative;
+      z-index: 1;
+      margin-top: 35px;
+      font-family: var(--font-heading);
+      font-size: 47px;
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    .membership-visual p {
+      position: relative;
+      z-index: 1;
+      max-width: 250px;
+      color: rgba(255,255,255,.78);
+      font-size: 12px;
+    }
+
+    .membership-price {
+      display: block;
+      margin-top: 35px;
+      font-family: var(--font-heading);
+      font-size: 34px;
+    }
+
+    .membership-copy ul {
+      padding: 0;
+      margin: 25px 0;
+      list-style: none;
+    }
+
+    .membership-copy li {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--color-border);
+      font-size: 13px;
+    }
+
+    .membership-copy li::before {
+      content: "✓";
+      padding-right: 12px;
+      color: var(--color-primary);
+      font-weight: 700;
     }
 
     /* Location */
 
-    .location-section {
-      background: var(--color-secondary-light);
+    .location {
+      background: var(--color-background);
     }
 
     .location-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(40px, 8vw, 100px);
+      grid-template-columns: .9fr 1.1fr;
+      gap: 75px;
       align-items: center;
     }
 
-    .location-details {
-      display: grid;
-      gap: 19px;
-      margin: 30px 0;
-    }
-
-    .location-detail {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-    }
-
-    .location-detail-mark {
-      display: grid;
-      width: 38px;
-      height: 38px;
-      flex: 0 0 auto;
-      place-items: center;
-      border-radius: 50%;
-      background: #FFFFFF;
-      color: var(--color-primary);
-      font-size: 17px;
-    }
-
-    .location-detail strong {
-      display: block;
-      margin-bottom: 3px;
-      color: var(--color-heading);
-      font-size: 13px;
-    }
-
-    .location-detail span,
-    .location-detail a {
-      color: var(--color-text-muted);
-      font-size: 13px;
-    }
-
-    .location-panel {
+    .location-art {
       position: relative;
-      min-height: 430px;
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-secondary-light);
       overflow: hidden;
-      padding: 32px;
-      border-radius: var(--radius-large);
-      background:
-        linear-gradient(135deg, rgba(95, 77, 63, 0.94), rgba(113, 139, 158, 0.88));
-      color: #FFFFFF;
     }
 
-    .location-panel::before,
-    .location-panel::after {
-      position: absolute;
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      border-radius: 50%;
-      content: "";
+    .location-art svg {
+      width: 90%;
     }
 
-    .location-panel::before {
-      top: -130px;
-      right: -110px;
-      width: 430px;
-      height: 430px;
+    .location-address {
+      margin: 25px 0;
+      padding: 22px 0;
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
     }
 
-    .location-panel::after {
-      right: -40px;
-      bottom: -180px;
-      width: 470px;
-      height: 470px;
+    .location-address strong {
+      display: block;
+      color: var(--color-heading);
+      font-family: var(--font-heading);
+      font-size: 25px;
+      font-weight: 600;
     }
 
-    .location-panel-content {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      min-height: 365px;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .location-panel .mini-label {
-      color: #E6D4C4;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.17em;
-      text-transform: uppercase;
-    }
-
-    .location-panel h3 {
-      max-width: 370px;
-      margin: 20px 0;
-      color: #FFFFFF;
-      font-size: clamp(38px, 4vw, 52px);
-    }
-
-    .location-panel p {
-      max-width: 340px;
-      color: rgba(255, 255, 255, 0.8);
+    .location-address p {
+      margin: 4px 0;
       font-size: 13px;
     }
 
-    /* Final CTA */
+    .location-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .text-link {
+      color: var(--color-primary-dark);
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 5px;
+    }
+
+    /* Final conversion */
 
     .final-cta {
-      padding-block: 90px;
-      background: var(--color-primary);
-      color: #FFFFFF;
+      padding: 95px 0;
+      background:
+        radial-gradient(ellipse at 90% 50%, rgba(158,181,198,.3), transparent 40%),
+        var(--color-background-alt);
       text-align: center;
     }
 
-    .final-cta .section-label {
-      color: #EADDD2;
-    }
-
-    .final-cta .section-label::before {
-      background: #EADDD2;
-    }
-
-    .final-cta h2 {
+    .final-cta .heading {
       max-width: 760px;
       margin-inline: auto;
-      color: #FFFFFF;
     }
 
     .final-cta p {
-      max-width: 620px;
-      margin: 0 auto 28px;
-      color: rgba(255, 255, 255, 0.82);
+      max-width: 570px;
+      margin: 20px auto 30px;
+      font-size: 14px;
     }
 
-    .final-cta-actions {
+    .final-actions {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 12px;
     }
 
     /* Footer */
 
     .site-footer {
-      padding: 65px 0 95px;
-      background: #302C29;
-      color: rgba(255, 255, 255, 0.72);
+      padding: 75px 0 35px;
+      background: #302B28;
+      color: white;
     }
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 1.3fr 0.8fr 0.8fr 1fr;
-      gap: 40px;
+      grid-template-columns: 1.3fr .8fr .8fr 1fr;
+      gap: 45px;
+      padding-bottom: 55px;
     }
 
     .footer-brand .brand-name {
-      color: #FFFFFF;
+      color: #D4BBA3;
     }
 
-    .footer-brand .brand-name small {
-      color: #C5D3DC;
+    .footer-brand .brand-tagline {
+      color: var(--color-secondary);
     }
 
-    .footer-brand .brand-mark {
-      border-color: rgba(255, 255, 255, 0.4);
-      color: #E7D7C8;
-    }
-
-    .footer-about {
-      max-width: 300px;
-      margin-top: 22px;
+    .footer-brand p {
+      max-width: 280px;
+      color: rgba(255,255,255,.65);
       font-size: 12px;
+      line-height: 1.9;
+      margin-top: 24px;
     }
 
-    .footer-column h4 {
-      margin-bottom: 18px;
-      color: #FFFFFF;
-      font-family: var(--font-body);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+    .footer-col h3 {
+      margin: 0 0 20px;
+      color: white;
+      font-family: var(--font-heading);
+      font-size: 23px;
+      font-weight: 500;
     }
 
-    .footer-column ul {
+    .footer-col ul {
       display: grid;
-      gap: 10px;
+      gap: 12px;
       margin: 0;
       padding: 0;
       list-style: none;
     }
 
-    .footer-column li,
-    .footer-column a {
-      font-size: 12px;
+    .footer-col li,
+    .footer-col a {
+      color: rgba(255,255,255,.65);
+      font-size: 11px;
     }
 
-    .footer-column a:hover {
-      color: #FFFFFF;
+    .footer-col a:hover {
+      color: white;
     }
 
     .footer-bottom {
       display: flex;
       justify-content: space-between;
       gap: 20px;
-      margin-top: 55px;
-      padding-top: 22px;
-      border-top: 1px solid rgba(255, 255, 255, 0.16);
-      font-size: 11px;
+      flex-wrap: wrap;
+      padding-top: 25px;
+      border-top: 1px solid rgba(255,255,255,.15);
+      color: rgba(255,255,255,.48);
+      font-size: 10px;
     }
 
-    /* Mobile conversion bar */
+    .footer-bottom a {
+      color: rgba(255,255,255,.7);
+    }
+
+    /* Persistent mobile conversion bar */
 
     .mobile-cta {
-      position: fixed;
-      z-index: 1200;
-      right: 0;
-      bottom: 0;
-      left: 0;
       display: none;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
-      border-top: 1px solid var(--color-border);
-      background: rgba(250, 248, 245, 0.97);
-      box-shadow: 0 -8px 25px rgba(48, 44, 41, 0.10);
-      backdrop-filter: blur(12px);
     }
 
-    .mobile-cta .button {
-      min-height: 50px;
-      padding: 12px 10px;
-      font-size: 12px;
-    }
+    /* Responsive */
 
-    /* Responsive behaviour */
-
-    @media (max-width: 1080px) {
-      .main-nav {
-        gap: 15px;
-      }
-
-      .main-nav a {
-        font-size: 12px;
-      }
-
-      .header-phone {
-        display: none;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1fr 0.9fr;
-        gap: 35px;
-      }
-
-      .hero-visual {
-        min-height: 470px;
-      }
-
-      .hero-image {
-        height: 440px;
-      }
-    }
-
-    @media (max-width: 820px) {
+    @media (max-width: 1050px) {
       :root {
-        --page-gutter: 20px;
+        --space-section: 80px;
       }
 
-      .header-inner {
-        min-height: 78px;
+      .nav-links {
+        gap: 13px;
       }
 
-      .menu-toggle {
-        display: flex;
+      .nav-links a {
+        font-size: 10px;
       }
 
-      .header-actions .button {
+      .nav-phone {
         display: none;
-      }
-
-      .main-nav {
-        position: fixed;
-        top: 78px;
-        right: 0;
-        left: 0;
-        display: none;
-        max-height: calc(100vh - 78px);
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        overflow-y: auto;
-        padding: 14px 22px 28px;
-        border-top: 1px solid var(--color-border);
-        background: var(--color-background);
-        box-shadow: var(--shadow-soft);
-      }
-
-      .main-nav.is-open {
-        display: flex;
-      }
-
-      .main-nav a {
-        padding: 15px 5px;
-        border-bottom: 1px solid var(--color-border);
-        font-size: 15px;
       }
 
       .hero-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-copy {
-        max-width: 700px;
-      }
-
-      .hero-visual {
-        width: min(100%, 620px);
-        min-height: 510px;
-        margin-inline: auto;
-      }
-
-      .hero-image {
-        width: 90%;
-        height: 470px;
-      }
-
-      .trust-inner {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .trust-item:nth-child(2) {
-        border-right: 0;
-      }
-
-      .trust-item:nth-child(-n+2) {
-        border-bottom: 1px solid var(--color-border);
+        gap: 20px;
       }
 
       .intro-grid,
-      .reassurance-grid,
-      .team-grid,
-      .reviews-layout,
+      .nervous-grid,
+      .membership-grid,
       .location-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .intro-grid {
-        gap: 30px;
-      }
-
-      .intro-aside {
-        max-width: 620px;
-      }
-
-      .reassurance-visual {
-        width: min(100%, 560px);
-        min-height: 420px;
-        margin-inline: auto;
-      }
-
-      .reassurance-visual-inner {
-        min-height: 370px;
-      }
-
-      .team-visual {
-        width: min(100%, 560px);
-      }
-
-      .team-copy {
-        max-width: 700px;
-      }
-
-      .location-panel {
-        min-height: 390px;
-      }
-
-      .location-panel-content {
-        min-height: 325px;
+        gap: 45px;
       }
 
       .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .mobile-cta {
-        display: grid;
-      }
-
-      .site-footer {
-        padding-bottom: 125px;
+        grid-template-columns: 1fr 1fr;
       }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 760px) {
       :root {
-        --page-gutter: 16px;
-        --section-space: 70px;
+        --space-section: 58px;
       }
 
       body {
         font-size: 15px;
       }
 
-      .topline {
-        font-size: 10px;
+      html {
+        scroll-padding-top: 75px;
       }
 
-      .brand-name {
-        font-size: 26px;
+      .container {
+        width: calc(100% - 28px);
       }
 
-      .brand-mark {
-        width: 38px;
-        height: 38px;
-      }
-
-      .hero {
-        padding-top: 55px;
-      }
-
-      .hero h1 {
-        font-size: clamp(43px, 12vw, 56px);
-      }
-
-      .hero-copy .lead {
-        font-size: 15px;
-      }
-
-      .hero-actions {
-        align-items: stretch;
-      }
-
-      .hero-actions .button {
-        flex: 1 1 100%;
-      }
-
-      .hero-visual {
-        min-height: 390px;
-      }
-
-      .hero-image {
-        width: 91%;
-        height: 365px;
-        border-radius: 150px 150px 18px 18px;
-      }
-
-      .hero-stamp {
-        right: -2px;
-        width: 122px;
-        height: 122px;
-        border-width: 7px;
-      }
-
-      .hero-stamp strong {
-        font-size: 31px;
-      }
-
-      .hero-stamp span {
-        font-size: 8px;
-      }
-
-      .hero-caption {
-        right: 7px;
-        bottom: 20px;
+      .top-strip {
         font-size: 9px;
       }
 
-      .trust-item {
-        min-height: 98px;
-        justify-content: flex-start;
-        gap: 10px;
-        padding: 13px 8px;
+      .nav-wrap {
+        min-height: 72px;
       }
 
-      .trust-symbol {
-        width: 34px;
-        height: 34px;
-        font-size: 18px;
+      .brand {
+        min-width: auto;
       }
 
-      .trust-item strong {
-        font-size: 11px;
+      .brand-name {
+        font-size: 33px;
       }
 
-      .trust-item span {
+      .brand-tagline {
+        font-size: 7px;
+      }
+
+      .menu-toggle {
+        display: block;
+        order: 3;
+      }
+
+      .nav-actions {
+        margin-left: auto;
+      }
+
+      .nav-actions .nav-book {
+        min-height: 42px;
+        padding: 8px 12px;
         font-size: 10px;
       }
 
-      .section-heading-row {
+      .nav-links {
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 20px 20px;
+        background: var(--color-background);
+        border-bottom: 1px solid var(--color-border);
+        box-shadow: var(--shadow-soft);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links li a {
         display: block;
-        margin-bottom: 32px;
+        padding: 12px 5px;
+        font-size: 13px;
       }
 
-      .section-heading-row p {
-        margin-top: 15px;
+      .hero {
+        min-height: auto;
+        padding: 48px 0 60px;
       }
 
-      .treatment-grid {
+      .hero::before {
+        font-size: 400px;
+        top: 80px;
+        right: -110px;
+      }
+
+      .hero-grid {
         grid-template-columns: 1fr;
-        gap: 12px;
+        gap: 20px;
       }
 
-      .treatment-item {
-        min-height: 215px;
-        padding: 24px;
+      .hero-copy {
+        padding: 0;
       }
 
-      .treatment-icon {
-        width: 58px;
-        height: 58px;
-        margin-bottom: 18px;
+      .hero h1 {
+        max-width: 570px;
+        font-size: clamp(56px, 13vw, 76px);
       }
 
-      .reassurance-visual {
+      .hero-description {
+        font-size: 14px;
+      }
+
+      .hero-art {
         min-height: 350px;
-        padding: 14px;
+        margin-top: 10px;
       }
 
-      .reassurance-visual-inner {
-        min-height: 320px;
-        padding: 25px;
+      .hero-illustration {
+        width: 94%;
       }
 
-      .reassurance-visual-inner p {
-        font-size: 27px;
+      .hero-note {
+        bottom: 0;
+        right: 0;
+        padding: 13px 16px;
       }
 
-      .journey-line {
-        grid-template-columns: 1fr 1fr;
-        row-gap: 35px;
+      .hero-note strong {
+        font-size: 21px;
+      }
+
+      .hero-trust {
+        gap: 13px;
+        margin-top: 25px;
+      }
+
+      .hero-trust-item {
+        font-size: 10px;
+      }
+
+      .reassurance-inner {
+        align-items: start;
+        flex-direction: column;
+        gap: 9px;
+      }
+
+      .reassurance strong {
+        font-size: 23px;
+      }
+
+      .intro-grid,
+      .nervous-grid,
+      .membership-grid,
+      .location-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .intro-aside {
+        padding-top: 0;
+      }
+
+      .intro-mark {
+        font-size: 90px;
+      }
+
+      .heading {
+        font-size: clamp(39px, 10vw, 52px);
+      }
+
+      .capabilities-header,
+      .feedback-header {
+        flex-direction: column;
+        align-items: start;
+        margin-bottom: 35px;
+      }
+
+      .icon-row {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+        gap: 10px;
+      }
+
+      .icon-item {
+        min-height: 220px;
+        padding: 20px 13px;
+      }
+
+      .icon-art {
+        width: 55px;
+        height: 55px;
+      }
+
+      .icon-item h3 {
+        font-size: 23px;
+      }
+
+      .icon-item p {
+        font-size: 11px;
+      }
+
+      .icon-number {
+        right: 12px;
+        top: 18px;
+      }
+
+      .treatment-row {
+        grid-template-columns: 40px 1fr 36px;
+        gap: 10px;
+        padding: 22px 5px;
+      }
+
+      .treatment-number {
+        font-size: 25px;
+      }
+
+      .treatment-row h3 {
+        font-size: 24px;
+      }
+
+      .treatment-row p {
+        grid-column: 2;
+        font-size: 11px;
+      }
+
+      .treatment-link {
+        grid-column: 3;
+        grid-row: 1 / span 2;
+        width: 34px;
+        height: 34px;
+      }
+
+      .nervous-art {
+        min-height: 290px;
+        order: 2;
+      }
+
+      .journey-steps {
+        grid-template-columns: repeat(2,1fr);
+        row-gap: 20px;
       }
 
       .journey-step {
-        padding-right: 16px;
+        padding: 20px 12px;
       }
 
-      .team-visual,
-      .team-visual img {
-        min-height: 350px;
-        height: 350px;
+      .journey-step:nth-child(2) {
+        border-right: 0;
       }
 
-      .credential-list {
-        grid-template-columns: 1fr;
+      .journey-step:first-child {
+        padding-left: 12px;
       }
 
-      .review-feature {
-        padding: 40px 26px;
+      .journey-step h3 {
+        font-size: 24px;
       }
 
-      .review-feature blockquote {
-        font-size: 29px;
+      .journey-cta {
+        align-items: start;
+        flex-direction: column;
       }
 
-      .location-panel {
-        min-height: 350px;
-        padding: 25px;
+      .feedback-content {
+        padding: 30px 23px;
       }
 
-      .location-panel-content {
-        min-height: 300px;
+      .feedback-content p {
+        font-size: 27px;
+      }
+
+      .membership-visual {
+        min-height: 290px;
+        padding: 30px;
+      }
+
+      .location-art {
+        min-height: 280px;
+      }
+
+      .final-cta {
+        padding: 70px 0;
       }
 
       .footer-grid {
         grid-template-columns: 1fr 1fr;
-        gap: 35px 22px;
-      }
-
-      .footer-brand {
-        grid-column: 1 / -1;
+        gap: 35px 20px;
       }
 
       .footer-bottom {
         flex-direction: column;
       }
 
-      .final-cta {
-        padding-block: 75px;
+      /* Exactly two fixed mobile conversion buttons */
+
+      body {
+        padding-bottom: calc(78px + env(safe-area-inset-bottom));
+      }
+
+      .mobile-cta {
+        position: fixed;
+        z-index: 2000;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        padding: 11px 12px calc(11px + env(safe-area-inset-bottom));
+        background: rgba(250,248,244,.97);
+        border-top: 1px solid var(--color-border);
+        box-shadow: 0 -8px 25px rgba(48,43,40,.08);
+        backdrop-filter: blur(12px);
+      }
+
+      .mobile-cta a {
+        min-height: 49px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 7px;
+        border-radius: 3px;
+        font-size: 11px;
+        font-weight: 700;
+        text-align: center;
+      }
+
+      .mobile-cta .mobile-call {
+        background: var(--color-primary-dark);
+        color: white;
+      }
+
+      .mobile-cta .mobile-book {
+        background: var(--color-secondary);
+        color: var(--color-heading);
+      }
+    }
+
+    @media (max-width: 390px) {
+      .hero h1 {
+        font-size: 53px;
+      }
+
+      .nav-actions .nav-book {
+        padding-inline: 9px;
+      }
+
+      .icon-row {
+        gap: 7px;
+      }
+
+      .icon-item {
+        padding: 16px 10px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -1648,9 +1610,9 @@
       *::before,
       *::after {
         scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
+        animation-duration: .01ms !important;
         animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
+        transition-duration: .01ms !important;
       }
     }
   </style>
@@ -1659,9 +1621,10 @@
   {
     "@context": "https://schema.org",
     "@type": "Dentist",
+    "@id": "https://vitality-dental.co.uk/#practice",
     "name": "Vitality Dental",
     "url": "https://vitality-dental.co.uk/",
-    "telephone": "+44 1798 872004",
+    "telephone": "+441798872004",
     "email": "info@vitality-dental.com",
     "address": {
       "@type": "PostalAddress",
@@ -1679,642 +1642,1188 @@
       "Storrington",
       "Midhurst",
       "Arundel",
-      "Steyning",
-      "Worthing",
-      "Chichester"
+      "West Sussex"
     ],
-    "medicalSpecialty": "Dentistry"
+    "medicalSpecialty": "Dentistry",
+    "description": "Private dental practice in Pulborough, West Sussex, providing general, cosmetic and specialist dental treatments, with particular support for nervous patients.",
+    "sameAs": [
+      "https://www.cqc.org.uk/location/1-17429589401"
+    ]
   }
   </script>
 </head>
 
 <body>
-  <div class="topline">
-    Private dental care in Pulborough, West Sussex.
-    <a href="https://vitality-dental.co.uk/accepting-new-patients/">New patients welcome</a>
+
+  <div class="top-strip">
+    PRIVATE DENTAL CARE IN PULBOROUGH ·
+    <a href="tel:01798872004">Call 01798 872004</a>
   </div>
 
   <header class="site-header">
-    <div class="container header-inner">
+    <div class="container nav-wrap">
+
       <a class="brand" href="#home" aria-label="Vitality Dental home">
-        <span class="brand-mark" aria-hidden="true">✳</span>
-        <span class="brand-name">
-          vitality
-          <small>Modern relaxed dental care</small>
-        </span>
+        <span class="brand-name">vitality</span>
+        <span class="brand-tagline">Modern relaxed dental care</span>
       </a>
 
-      <nav class="main-nav" id="main-navigation" aria-label="Main navigation">
-        <a href="#approach">Our approach</a>
-        <a href="#treatments">Treatments</a>
-        <a href="#nervous-patients">Nervous patients</a>
-        <a href="#team">Our team</a>
-        <a href="#reviews">Patient feedback</a>
-        <a href="#contact">Find us</a>
+      <button class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="primaryNavigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-links" id="primaryNavigation">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#experience">Our approach</a></li>
+          <li><a href="#treatments">Treatments</a></li>
+          <li><a href="#nervous">Nervous patients</a></li>
+          <li><a href="#journey">Your first visit</a></li>
+          <li><a href="#location">Find us</a></li>
+        </ul>
       </nav>
 
-      <div class="header-actions">
-        <a class="header-phone" href="tel:+441798872004">01798 872004</a>
-        <a class="button" href="https://vitality-dental.co.uk/accepting-new-patients/">
-          Book an appointment <span class="button-arrow">↗</span>
+      <div class="nav-actions">
+        <a class="nav-phone" href="tel:01798872004">
+          01798 872004
         </a>
-        <button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="main-navigation" aria-expanded="false">
-          <span></span>
-        </button>
+
+        <a class="btn btn-primary nav-book"
+          href="https://uk.dentalhub.online/soe/new/VITALITY?pid=UKMZD01"
+          target="_blank"
+          rel="noopener noreferrer">
+          BOOK APPOINTMENT
+          <span class="arrow">↗</span>
+        </a>
       </div>
+
     </div>
   </header>
 
-  <main id="home">
-    <!-- Hero: clear positioning and immediate appointment route -->
-    <section class="hero">
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
       <div class="container hero-grid">
+
         <div class="hero-copy">
-          <p class="section-label">Private dentistry in Pulborough</p>
-          <h1>Feel at ease with <em>every</em> reason to smile.</h1>
-          <p class="lead">
-            Thoughtful dental care for individuals and families, delivered by an experienced team
-            in a modern, relaxed setting. Whether you are visiting for a routine check-up or
-            exploring a treatment option, your needs come first.
+
+          <div class="hero-label">
+            PRIVATE DENTISTRY · PULBOROUGH
+          </div>
+
+          <h1>
+            Dentistry that feels
+            <em>different.</em>
+          </h1>
+
+          <p class="hero-description">
+            Thoughtful dental care, experienced professionals and a
+            welcoming approach that puts your comfort first.
+            Whether you are visiting regularly or feeling nervous
+            about your next appointment, we are here to help.
           </p>
 
           <div class="hero-actions">
-            <a class="button" href="https://vitality-dental.co.uk/accepting-new-patients/">
-              Arrange your visit <span class="button-arrow">↗</span>
+
+            <a class="btn btn-primary"
+              href="https://uk.dentalhub.online/soe/new/VITALITY?pid=UKMZD01"
+              target="_blank"
+              rel="noopener noreferrer">
+              Book an appointment
+              <span class="arrow">↗</span>
             </a>
-            <a class="button button-light" href="tel:+441798872004">
-              Call 01798 872004
+
+            <a class="btn btn-outline" href="tel:01798872004">
+              Call our practice
             </a>
+
           </div>
+
+          <div class="hero-trust">
+
+            <div class="hero-trust-item">
+              <span class="trust-dot"></span>
+              Private dental practice
+            </div>
+
+            <div class="hero-trust-item">
+              <span class="trust-dot"></span>
+              Nervous patients welcome
+            </div>
+
+            <div class="hero-trust-item">
+              <span class="trust-dot"></span>
+              Pulborough, West Sussex
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="hero-art" aria-label="Original abstract smile-inspired dental illustration">
+
+          <div class="art-circle one"></div>
+          <div class="art-circle two"></div>
+
+          <svg class="hero-illustration"
+            viewBox="0 0 600 540"
+            role="img"
+            aria-labelledby="heroArtworkTitle">
+
+            <title id="heroArtworkTitle">
+              Abstract illustration representing a calm, confident smile
+            </title>
+
+            <defs>
+              <linearGradient id="smileGradient" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#B59B83"/>
+                <stop offset="100%" stop-color="#80664F"/>
+              </linearGradient>
+            </defs>
+
+            <path d="M80 300 C110 95 350 10 510 145"
+              fill="none"
+              stroke="#9EB5C6"
+              stroke-width="2"
+              opacity=".7"/>
+
+            <path d="M105 355 C190 465 405 480 510 335"
+              fill="none"
+              stroke="#C5A77C"
+              stroke-width="2"
+              opacity=".8"/>
+
+            <ellipse cx="302" cy="260" rx="200" ry="178"
+              fill="#DCE7ED"
+              opacity=".7"/>
+
+            <path d="M130 265
+              C185 160 415 160 475 265
+              C415 385 190 390 130 265Z"
+              fill="#FFFFFF"
+              stroke="#80664F"
+              stroke-width="2"/>
+
+            <path d="M132 265
+              C220 310 380 310 473 265"
+              fill="none"
+              stroke="url(#smileGradient)"
+              stroke-width="6"
+              stroke-linecap="round"/>
+
+            <path d="M170 254
+              C230 222 375 222 435 254"
+              fill="none"
+              stroke="#9EB5C6"
+              stroke-width="2"
+              stroke-linecap="round"/>
+
+            <path d="M210 273 L210 290 M270 282 L270 296
+              M330 282 L330 296 M390 273 L390 290"
+              stroke="#D5C8B8"
+              stroke-width="2"
+              stroke-linecap="round"/>
+
+            <circle cx="150" cy="160" r="7" fill="#C5A77C"/>
+            <circle cx="465" cy="365" r="9" fill="#9EB5C6"/>
+            <circle cx="425" cy="100" r="5" fill="#80664F"/>
+
+            <path d="M85 400 C140 470 200 495 260 500"
+              fill="none"
+              stroke="#80664F"
+              stroke-width="1"
+              opacity=".4"/>
+
+          </svg>
 
           <div class="hero-note">
-            <span class="hero-note-mark" aria-hidden="true">✳</span>
-            <span>New patients welcome. Speak to the team about your needs.</span>
+            <strong>Feel at ease.</strong>
+            <span>Dental care with understanding, patience and a personal approach.</span>
           </div>
+
         </div>
 
-        <div class="hero-visual" aria-label="Illustrative dental-care photography">
-          <div class="hero-image">
-            <img
-              src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1200&q=88"
-              alt="Illustrative photograph of a patient receiving dental care"
-              fetchpriority="high">
-          </div>
-          <div class="hero-stamp" aria-label="Care for all ages">
-            <strong>Care</strong>
-            <span>For every stage of life</span>
-          </div>
-          <span class="hero-caption">A more relaxed dental experience</span>
-        </div>
       </div>
     </section>
 
-    <!-- Trust information -->
-    <section class="trust-ribbon" aria-label="Vitality Dental highlights">
-      <div class="container trust-inner">
-        <div class="trust-item">
-          <span class="trust-symbol" aria-hidden="true">✳</span>
-          <div>
-            <strong>Private dental practice</strong>
-            <span>In Pulborough, West Sussex</span>
-          </div>
-        </div>
-        <div class="trust-item">
-          <span class="trust-symbol" aria-hidden="true">♡</span>
-          <div>
-            <strong>Nervous-patient care</strong>
-            <span>Support and sedation on request</span>
-          </div>
-        </div>
-        <div class="trust-item">
-          <span class="trust-symbol" aria-hidden="true">＋</span>
-          <div>
-            <strong>Care for all ages</strong>
-            <span>Individuals and families</span>
-          </div>
-        </div>
-        <div class="trust-item">
-          <span class="trust-symbol" aria-hidden="true">⌖</span>
-          <div>
-            <strong>Convenient location</strong>
-            <span>32 Lower Street, Pulborough</span>
-          </div>
-        </div>
+    <!-- REASSURANCE -->
+
+    <section class="reassurance">
+      <div class="container reassurance-inner">
+        <strong>A more comfortable way to visit the dentist.</strong>
+
+        <p>
+          We understand that every patient's needs and experiences are different.
+        </p>
+
+        <a href="https://vitality-dental.co.uk/nervous-patients/">
+          Discover our approach →
+        </a>
       </div>
     </section>
 
-    <!-- Brand introduction -->
-    <section class="section" id="approach">
+    <!-- INTRODUCTION -->
+
+    <section class="section" id="experience">
       <div class="container intro-grid">
-        <aside class="intro-aside">
-          <p>
-            Dentistry should feel clear, considered and centred around the person in the chair.
-          </p>
-        </aside>
 
-        <div class="intro-main">
-          <p class="section-label">The Vitality approach</p>
-          <h2>Good dental care begins with listening.</h2>
-          <p class="lead">
-            Choosing a dentist is about more than finding a convenient appointment.
-            It is about feeling comfortable asking questions, understanding your options
-            and knowing that your concerns have been heard.
+        <div class="intro-aside">
+          <span class="section-kicker">THE VITALITY APPROACH</span>
+          <span class="intro-mark">V.</span>
+          <p class="small-note">
+            Modern dental care. A more personal experience.
           </p>
+        </div>
+
+        <div class="intro-copy">
+
+          <h2 class="heading">
+            Your dental health matters.
+            <em>So does how you feel.</em>
+          </h2>
+
           <p>
-            At Vitality Dental, the team provides a broad range of private dental treatments
-            in Pulborough. From everyday preventive care to cosmetic and more complex
-            treatment options, the aim is to help each patient understand their dental health
-            and make informed decisions about their care.
+            At Vitality Dental, we believe looking after your teeth
+            should feel straightforward and reassuring.
           </p>
-          <a class="text-link" href="https://vitality-dental.co.uk/experience/">
-            Discover the Vitality experience <span>→</span>
+
+          <p>
+            Our Pulborough practice provides a wide range of dental
+            treatments, from routine examinations and hygiene care
+            to cosmetic and specialist procedures.
+          </p>
+
+          <p>
+            We are particularly keen to support people who feel
+            anxious about visiting a dentist. We take the time
+            to understand individual concerns and help patients
+            feel more comfortable accessing dental care.
+          </p>
+
+          <a class="text-link"
+            href="https://vitality-dental.co.uk/team/">
+            Get to know our team →
           </a>
+
+          <div class="intro-signature">
+            Care that starts with listening.
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Exactly six custom SVG icons, displayed in two rows of three -->
-    <section class="section treatment-section" id="treatments">
+    <!-- EXACTLY SIX CUSTOM SVG ICONS: TWO ROWS OF THREE -->
+
+    <section class="section capabilities" id="capabilities">
+
       <div class="container">
-        <div class="section-heading-row">
+
+        <div class="capabilities-header">
           <div>
-            <p class="section-label">Explore your options</p>
-            <h2>Care that meets your needs.</h2>
+            <span class="section-kicker">OUR DENTAL CAPABILITIES</span>
+            <h2 class="heading">
+              Care for every
+              <em>stage of your smile.</em>
+            </h2>
           </div>
-          <p>
-            Find a starting point for the care you are looking for. The team can help you
-            understand which options may be suitable following a consultation.
+
+          <p class="lead">
+            Explore the main areas of dental care available at
+            Vitality, from maintaining healthy teeth to more
+            advanced treatment options.
           </p>
         </div>
 
-        <div class="treatment-grid">
-          <!-- Custom icon 1: Preventive and general care -->
-          <article class="treatment-item">
-            <div class="treatment-icon">
-              <svg viewBox="0 0 48 48" role="img" aria-label="Tooth outline">
-                <path d="M14 8.5c-5 0-8 4-7 10l4 17c.8 3.5 3.7 5.5 5.8 2.4l4.1-8.2c1.2-2.3 3.8-2.3 5 0l4.1 8.2c2.1 3.1 5 1.1 5.8-2.4l4-17c1-6-2-10-7-10-3.6 0-5.5 2-9.4 2s-5.8-2-9.4-2Z"/>
-                <path d="M17 16c2-1.4 4.5-1.8 7-1.8s5 .4 7 1.8"/>
-              </svg>
-            </div>
+        <!-- ROW ONE: THREE ICONS -->
+
+        <div class="icon-row">
+
+          <article class="icon-item">
+            <span class="icon-number">01</span>
+
+            <svg class="icon-art" viewBox="0 0 80 80"
+              fill="none" aria-hidden="true">
+              <path d="M40 10 C20 10 12 25 15 43
+                C17 56 23 69 30 69
+                C36 69 35 54 40 54
+                C45 54 44 69 50 69
+                C57 69 63 56 65 43
+                C68 25 60 10 40 10Z"
+                stroke="currentColor"
+                stroke-width="2.5"/>
+              <path d="M25 30 C33 22 47 22 55 30"
+                stroke="#9EB5C6"
+                stroke-width="3"
+                stroke-linecap="round"/>
+              <path d="M30 39 L50 39"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"/>
+            </svg>
+
             <h3>General dentistry</h3>
             <p>
-              Routine examinations, fillings and preventive care to help you look after
-              your oral health over time.
+              Dental examinations, preventive care and routine
+              treatment to support long-term oral health.
             </p>
-            <a class="text-link" href="https://vitality-dental.co.uk/consultations/">
-              Explore consultations <span>→</span>
-            </a>
           </article>
 
-          <!-- Custom icon 2: Cosmetic dentistry -->
-          <article class="treatment-item">
-            <div class="treatment-icon">
-              <svg viewBox="0 0 48 48" role="img" aria-label="Sparkling smile outline">
-                <path d="M9 27c4.2 5.8 9.2 8.7 15 8.7S34.8 32.8 39 27"/>
-                <path d="M13 26c3.4 2.3 7.1 3.5 11 3.5s7.6-1.2 11-3.5"/>
-                <path d="M11 17l2-4m-2 4 4 1m-4-1-3 3"/>
-                <path d="M36 9l1.6-3.5M36 9l3.5 1.6M36 9l-1.6 3.5"/>
-                <path d="M23 8v4m-2-2h4"/>
-              </svg>
-            </div>
+          <article class="icon-item">
+            <span class="icon-number">02</span>
+
+            <svg class="icon-art" viewBox="0 0 80 80"
+              fill="none" aria-hidden="true">
+              <path d="M12 44 C26 63 54 63 68 44"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"/>
+              <path d="M17 38 C30 48 50 48 63 38"
+                stroke="#9EB5C6"
+                stroke-width="3"
+                stroke-linecap="round"/>
+              <path d="M29 28 C29 22 34 19 40 19
+                C46 19 51 22 51 28"
+                stroke="currentColor"
+                stroke-width="2.5"/>
+              <path d="M40 10 V16 M17 20 L22 24 M63 20 L58 24"
+                stroke="#C5A77C"
+                stroke-width="2"
+                stroke-linecap="round"/>
+            </svg>
+
             <h3>Cosmetic dentistry</h3>
             <p>
-              Discuss options such as professional teeth whitening, veneers and
-              composite bonding.
+              Teeth whitening, veneers and composite bonding
+              for patients exploring smile enhancement.
             </p>
-            <a class="text-link" href="https://vitality-dental.co.uk/">
-              Explore cosmetic care <span>→</span>
-            </a>
           </article>
 
-          <!-- Custom icon 3: Dental implants -->
-          <article class="treatment-item">
-            <div class="treatment-icon">
-              <svg viewBox="0 0 48 48" role="img" aria-label="Dental implant illustration">
-                <path d="M14 7c-4.5 0-7 3.6-6 9l3.5 13.5c.7 2.6 2.7 3.4 4.3 1l3.4-5.5c1.1-1.7 2.5-1.7 3.6 0l3.4 5.5c1.6 2.4 3.6 1.6 4.3-1L34 16c1-5.4-1.5-9-6-9-3 0-4.5 1.5-7 1.5S17 7 14 7Z"/>
-                <path d="M21 24v13m6-13v13m-7 0h8m-7-4h6m-6-4h6"/>
-                <path d="M18 18h12"/>
-              </svg>
-            </div>
-            <h3>Dental implants</h3>
+          <article class="icon-item">
+            <span class="icon-number">03</span>
+
+            <svg class="icon-art" viewBox="0 0 80 80"
+              fill="none" aria-hidden="true">
+              <path d="M15 42 L40 18 L65 42"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"/>
+              <path d="M23 38 V66 H57 V38"
+                stroke="currentColor"
+                stroke-width="2.5"/>
+              <path d="M33 66 V49 H47 V66"
+                stroke="#9EB5C6"
+                stroke-width="3"/>
+              <path d="M40 8 V16 M8 42 H14 M66 42 H72"
+                stroke="#C5A77C"
+                stroke-width="2"
+                stroke-linecap="round"/>
+            </svg>
+
+            <h3>Restorative care</h3>
             <p>
-              Find out about implant treatment and the consultation process for
-              replacing missing teeth.
+              Dental crowns, bridges and implants to address
+              missing or damaged teeth.
             </p>
-            <a class="text-link" href="https://vitality-dental.co.uk/consultations/">
-              Discuss implant options <span>→</span>
-            </a>
           </article>
 
-          <!-- Custom icon 4: Orthodontics -->
-          <article class="treatment-item">
-            <div class="treatment-icon">
-              <svg viewBox="0 0 48 48" role="img" aria-label="Orthodontic alignment illustration">
-                <path d="M8 15c0-4 3-6 7-6h18c4 0 7 2 7 6v16c0 4-3 7-7 7H15c-4 0-7-3-7-7V15Z"/>
-                <path d="M13 17h22M13 31h22"/>
-                <path d="M16 17v14m8-14v14m8-14v14"/>
-                <path d="M11 24h26"/>
-              </svg>
-            </div>
-            <h3>Teeth straightening</h3>
-            <p>
-              Explore orthodontic consultations and clear aligner options, including
-              Invisalign where suitable.
-            </p>
-            <a class="text-link" href="https://vitality-dental.co.uk/faqs/">
-              Learn about Invisalign <span>→</span>
-            </a>
-          </article>
-
-          <!-- Custom icon 5: Hygiene -->
-          <article class="treatment-item">
-            <div class="treatment-icon">
-              <svg viewBox="0 0 48 48" role="img" aria-label="Dental hygiene illustration">
-                <path d="M13 8c-4 0-6 3-5 8l4 17c.7 3 3.2 4.4 5 1.7l3.4-6.2c1.1-2 3.1-2 4.2 0l3.4 6.2c1.8 2.7 4.3 1.3 5-1.7l4-17c1-5-1-8-5-8-3 0-5 2-8 2s-5-2-8-2Z"/>
-                <path d="M36 6l2-3m-2 3 4 1m-4-1-1 4"/>
-                <path d="M8 25l-3 1m3-1-1-3"/>
-              </svg>
-            </div>
-            <h3>Hygiene and gum care</h3>
-            <p>
-              Support for healthier gums, professional cleaning and practical
-              advice for everyday oral hygiene.
-            </p>
-            <a class="text-link" href="https://vitality-dental.co.uk/healthy-gums/">
-              Explore gum care <span>→</span>
-            </a>
-          </article>
-
-          <!-- Custom icon 6: Nervous patient support -->
-          <article class="treatment-item">
-            <div class="treatment-icon">
-              <svg viewBox="0 0 48 48" role="img" aria-label="Comfort and reassurance illustration">
-                <path d="M24 40S7 30 7 18.5C7 12.5 11 9 16 9c3.3 0 6.1 1.8 8 4.5C25.9 10.8 28.7 9 32 9c5 0 9 3.5 9 9.5C41 30 24 40 24 40Z"/>
-                <path d="M16 23h4l2.5-4 4 9 2.5-5h4"/>
-              </svg>
-            </div>
-            <h3>Nervous-patient care</h3>
-            <p>
-              A considerate approach to dental anxiety, with time to discuss concerns
-              and sedation available on request.
-            </p>
-            <a class="text-link" href="https://vitality-dental.co.uk/accepting-new-patients/">
-              Talk through your concerns <span>→</span>
-            </a>
-          </article>
         </div>
 
-        <p class="treatment-footnote">
-          Treatment suitability is assessed individually. Please contact the practice
-          to discuss your needs and available options.
-        </p>
+        <!-- ROW TWO: THREE ICONS -->
+
+        <div class="icon-row">
+
+          <article class="icon-item">
+            <span class="icon-number">04</span>
+
+            <svg class="icon-art" viewBox="0 0 80 80"
+              fill="none" aria-hidden="true">
+              <path d="M17 18 H63 V60 H17 Z"
+                stroke="currentColor"
+                stroke-width="2.5"/>
+              <path d="M25 29 H55 M25 38 H48"
+                stroke="#9EB5C6"
+                stroke-width="2.5"
+                stroke-linecap="round"/>
+              <path d="M40 44 L46 50 L57 39"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"/>
+              <path d="M30 69 H50"
+                stroke="#C5A77C"
+                stroke-width="2.5"
+                stroke-linecap="round"/>
+            </svg>
+
+            <h3>Orthodontics</h3>
+            <p>
+              Specialist orthodontic treatment and Invisalign
+              options for suitable patients.
+            </p>
+          </article>
+
+          <article class="icon-item">
+            <span class="icon-number">05</span>
+
+            <svg class="icon-art" viewBox="0 0 80 80"
+              fill="none" aria-hidden="true">
+              <circle cx="40" cy="40" r="26"
+                stroke="currentColor"
+                stroke-width="2.5"/>
+              <path d="M40 24 V40 L51 47"
+                stroke="#9EB5C6"
+                stroke-width="3"
+                stroke-linecap="round"/>
+              <path d="M40 7 V13 M40 67 V73
+                M7 40 H13 M67 40 H73"
+                stroke="#C5A77C"
+                stroke-width="2"
+                stroke-linecap="round"/>
+            </svg>
+
+            <h3>Endodontics</h3>
+            <p>
+              Specialist root canal care for patients who
+              need treatment to preserve natural teeth.
+            </p>
+          </article>
+
+          <article class="icon-item">
+            <span class="icon-number">06</span>
+
+            <svg class="icon-art" viewBox="0 0 80 80"
+              fill="none" aria-hidden="true">
+              <path d="M40 10 L65 20 V39
+                C65 54 54 65 40 70
+                C26 65 15 54 15 39 V20 Z"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linejoin="round"/>
+              <path d="M29 40 L37 48 L53 31"
+                stroke="#9EB5C6"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"/>
+            </svg>
+
+            <h3>Patient wellbeing</h3>
+            <p>
+              Individual support for nervous patients, with
+              sedation available upon request.
+            </p>
+          </article>
+
+        </div>
+
       </div>
     </section>
 
-    <!-- Nervous patient differentiation -->
-    <section class="section reassurance" id="nervous-patients">
-      <div class="container reassurance-grid">
-        <div class="reassurance-copy">
-          <p class="section-label">A little more understanding</p>
-          <h2>It is okay to feel nervous about visiting the dentist.</h2>
-          <p>
-            Dental anxiety can make it difficult to arrange the care you need.
-            Vitality Dental welcomes nervous patients and encourages you to talk
-            openly with the team about what would help you feel more comfortable.
-          </p>
+    <!-- TREATMENT PATHWAYS -->
 
-          <ul class="reassurance-list">
-            <li>Discuss your concerns before deciding on treatment.</li>
-            <li>Take time to understand the options available to you.</li>
-            <li>Ask the team about sedation if you feel particularly anxious.</li>
-          </ul>
+    <section class="section treatments" id="treatments">
 
-          <a class="button button-white" href="https://vitality-dental.co.uk/accepting-new-patients/">
-            Talk to the team <span class="button-arrow">↗</span>
-          </a>
-        </div>
-
-        <div class="reassurance-visual" role="img" aria-label="Illustrative photograph representing a calm dental-care environment">
-          <div class="reassurance-visual-inner">
-            <p>Start with a conversation. Take the next step when you feel ready.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Patient journey -->
-    <section class="section journey-section">
       <div class="container">
-        <div class="journey-intro">
-          <p class="section-label">Your first visit</p>
-          <h2>A clear way forward, at your pace.</h2>
+
+        <div class="treatments-header">
+          <span class="section-kicker">EXPLORE YOUR OPTIONS</span>
+
+          <h2 class="heading">
+            The right care for
+            <em>your needs.</em>
+          </h2>
+
           <p class="lead">
-            Knowing what to expect can make choosing a new dental practice feel easier.
-            Here is a simple guide to getting started.
+            Whether you want to maintain your dental health,
+            explore cosmetic improvements or discuss a more
+            complex concern, start with the area that matters
+            most to you.
           </p>
         </div>
 
-        <div class="journey-line">
-          <article class="journey-step">
-            <span class="journey-number">01</span>
-            <h3>Get in touch</h3>
-            <p>Call the practice or use the online new-patient information to make an enquiry.</p>
-          </article>
+        <article class="treatment-row">
+          <span class="treatment-number">01</span>
 
-          <article class="journey-step">
-            <span class="journey-number">02</span>
-            <h3>Share your needs</h3>
-            <p>Tell the team what you are looking for and raise any concerns or questions.</p>
-          </article>
+          <h3>Everyday dental care</h3>
 
-          <article class="journey-step">
-            <span class="journey-number">03</span>
-            <h3>Explore options</h3>
-            <p>Discuss your dental health, possible treatment choices and any relevant fees.</p>
-          </article>
+          <p>
+            Examinations, dental hygiene, healthy gums,
+            children's dentistry and preventive treatment.
+          </p>
 
-          <article class="journey-step">
-            <span class="journey-number">04</span>
-            <h3>Choose your next step</h3>
-            <p>Make an informed decision about the care that is appropriate for you.</p>
-          </article>
+          <a class="treatment-link"
+            href="https://vitality-dental.co.uk/"
+            aria-label="Explore general dental care">↗</a>
+        </article>
+
+        <article class="treatment-row">
+          <span class="treatment-number">02</span>
+
+          <h3>Smile enhancement</h3>
+
+          <p>
+            Explore teeth whitening, veneers, composite bonding
+            and teeth straightening options.
+          </p>
+
+          <a class="treatment-link"
+            href="https://vitality-dental.co.uk/"
+            aria-label="Explore cosmetic dental treatments">↗</a>
+        </article>
+
+        <article class="treatment-row">
+          <span class="treatment-number">03</span>
+
+          <h3>Advanced dental treatment</h3>
+
+          <p>
+            Discuss dental implants, crowns, bridges,
+            specialist orthodontics and endodontic treatment.
+          </p>
+
+          <a class="treatment-link"
+            href="https://vitality-dental.co.uk/"
+            aria-label="Explore advanced dental treatments">↗</a>
+        </article>
+
+        <div class="treatment-footer">
+          <p class="small-note">
+            Treatment suitability is determined following
+            an appropriate clinical assessment.
+          </p>
+
+          <a class="btn btn-primary"
+            href="https://uk.dentalhub.online/soe/new/VITALITY?pid=UKMZD01"
+            target="_blank"
+            rel="noopener noreferrer">
+            Discuss your dental needs ↗
+          </a>
         </div>
+
       </div>
     </section>
 
-    <!-- Team and clinical trust -->
-    <section class="section team-section" id="team">
-      <div class="container team-grid">
-        <div class="team-visual">
-          <img
-            src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1100&q=85"
-            alt="Illustrative photograph of a modern dental practice interior"
-            loading="lazy">
+    <!-- NERVOUS PATIENTS -->
+
+    <section class="section nervous" id="nervous">
+
+      <div class="container nervous-grid">
+
+        <div class="nervous-art">
+
+          <svg viewBox="0 0 520 430"
+            role="img"
+            aria-label="Abstract illustration representing patient reassurance">
+
+            <circle cx="260" cy="215" r="165"
+              fill="#FFFFFF" opacity=".55"/>
+
+            <circle cx="260" cy="215" r="125"
+              fill="none"
+              stroke="#9EB5C6"
+              stroke-width="2"/>
+
+            <path d="M125 230 C155 120 350 120 390 230"
+              fill="none"
+              stroke="#80664F"
+              stroke-width="3"
+              stroke-linecap="round"/>
+
+            <path d="M160 235 C200 295 320 295 360 235"
+              fill="none"
+              stroke="#C5A77C"
+              stroke-width="5"
+              stroke-linecap="round"/>
+
+            <circle cx="260" cy="215" r="58"
+              fill="#DCE7ED"/>
+
+            <path d="M235 220 C245 232 275 232 285 220"
+              fill="none"
+              stroke="#80664F"
+              stroke-width="3"
+              stroke-linecap="round"/>
+
+            <circle cx="238" cy="200" r="4" fill="#80664F"/>
+            <circle cx="282" cy="200" r="4" fill="#80664F"/>
+
+            <path d="M75 85 L90 85 M82 78 V92"
+              stroke="#C5A77C"
+              stroke-width="3"
+              stroke-linecap="round"/>
+
+            <path d="M425 320 L440 320 M432 313 V327"
+              stroke="#80664F"
+              stroke-width="3"
+              stroke-linecap="round"/>
+
+          </svg>
+
         </div>
 
-        <div class="team-copy">
-          <p class="section-label">People behind your care</p>
-          <h2>Experience, expertise and a team that listens.</h2>
-          <p>
-            Vitality Dental's team includes dental surgeons and other dental
-            professionals working across a range of treatment areas.
-            The practice's team information introduces its clinicians and
-            their professional backgrounds.
-          </p>
-          <p>
-            Dr Arvin Mirzadeh is listed by the practice as Dental Surgeon and
-            Practice Principal. His published profile includes his professional
-            qualifications and General Dental Council registration number.
+        <div class="nervous-copy">
+
+          <span class="section-kicker">A DIFFERENT DENTAL EXPERIENCE</span>
+
+          <h2 class="heading">
+            It's okay to feel
+            <em>nervous.</em>
+          </h2>
+
+          <p class="lead">
+            We understand that visiting the dentist is not
+            always easy. Previous experiences, uncertainty
+            or anxiety can make taking that first step difficult.
           </p>
 
-          <ul class="credential-list">
-            <li>Dental surgeons</li>
-            <li>Dental hygienists</li>
-            <li>Endodontic care</li>
-            <li>Dental nursing team</li>
+          <p>
+            At Vitality, supporting nervous patients is an
+            important part of our approach. We want you to
+            feel listened to and understood.
+          </p>
+
+          <ul class="nervous-points">
+            <li>We welcome conversations about your concerns.</li>
+            <li>You can discuss your needs before deciding on treatment.</li>
+            <li>Sedation is available upon request, where clinically appropriate.</li>
+            <li>Our team aims to help you feel more comfortable throughout your visit.</li>
           </ul>
 
-          <div class="team-note">
-            Clinical roles and credentials should be checked against the current
-            practice team page before publication or use in patient communications.
-          </div>
-
-          <a class="text-link" href="https://vitality-dental.co.uk/team/">
-            Meet the Vitality team <span>→</span>
+          <a class="btn btn-primary"
+            href="https://vitality-dental.co.uk/nervous-patients/">
+            Learn about nervous-patient care
+            <span class="arrow">↗</span>
           </a>
+
+          <p class="small-note">
+            Sedation requires an individual clinical assessment
+            and is not suitable for every patient.
+          </p>
+
         </div>
+
       </div>
     </section>
 
-    <!-- Reviews and social proof -->
-    <section class="section reviews-section" id="reviews">
-      <div class="container reviews-layout">
-        <div>
-          <p class="section-label">Patient feedback</p>
-          <h2>Hear from people who have visited Vitality.</h2>
-          <p>
-            Reading patient feedback can help you understand what others value
-            about their experience. Explore the practice's published reviews
-            before deciding whether to get in touch.
-          </p>
+    <!-- FIRST VISIT -->
 
-          <div class="review-score">
-            <strong>4.9</strong>
-            <div>
-              <div class="review-stars" aria-label="Five star rating">★★★★★</div>
-              <span>Google rating displayed on the practice website</span>
-              <span>Review count may change over time</span>
-            </div>
-          </div>
+    <section class="section journey" id="journey">
 
-          <a class="text-link" href="https://vitality-dental.co.uk/">
-            Read patient feedback <span>→</span>
-          </a>
-        </div>
-
-        <div class="review-feature">
-          <blockquote>
-            Take the time to explore patient experiences and decide whether
-            Vitality's approach feels right for you.
-          </blockquote>
-          <p class="review-disclaimer">
-            This is an invitation to read the practice's reviews, not a patient
-            testimonial or quotation.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Location and local relevance -->
-    <section class="section location-section" id="contact">
-      <div class="container location-grid">
-        <div>
-          <p class="section-label">Visit Vitality Dental</p>
-          <h2>Local dental care in the heart of Pulborough.</h2>
-          <p>
-            The practice is located on Lower Street in Pulborough, West Sussex.
-            It also welcomes enquiries from people in surrounding communities
-            including Horsham, Billingshurst, Petworth, Storrington and Arundel.
-          </p>
-
-          <div class="location-details">
-            <div class="location-detail">
-              <span class="location-detail-mark" aria-hidden="true">⌖</span>
-              <div>
-                <strong>Practice address</strong>
-                <span>32 Lower Street, Pulborough, West Sussex, RH20 2BL</span>
-              </div>
-            </div>
-
-            <div class="location-detail">
-              <span class="location-detail-mark" aria-hidden="true">☎</span>
-              <div>
-                <strong>Telephone</strong>
-                <a href="tel:+441798872004">01798 872004</a>
-              </div>
-            </div>
-
-            <div class="location-detail">
-              <span class="location-detail-mark" aria-hidden="true">✉</span>
-              <div>
-                <strong>Email</strong>
-                <a href="mailto:info@vitality-dental.com">info@vitality-dental.com</a>
-              </div>
-            </div>
-          </div>
-
-          <a class="button" href="https://vitality-dental.co.uk/contact/">
-            Contact the practice <span class="button-arrow">↗</span>
-          </a>
-        </div>
-
-        <div class="location-panel">
-          <div class="location-panel-content">
-            <span class="mini-label">West Sussex · England</span>
-            <div>
-              <h3>Your local starting point for dental care.</h3>
-              <p>
-                Find the practice, check contact details and speak with the team
-                about arranging an appointment.
-              </p>
-            </div>
-            <a class="button button-white" href="https://www.google.com/maps/search/?api=1&query=Vitality+Dental+32+Lower+Street+Pulborough+RH20+2BL" target="_blank" rel="noopener noreferrer">
-              Get directions <span class="button-arrow">↗</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Closing conversion section -->
-    <section class="final-cta">
       <div class="container">
-        <p class="section-label">Your next step</p>
-        <h2>Have a question about your dental care?</h2>
-        <p>
-          Speak with the Vitality Dental team about your needs, ask about the
-          options available and find out how to arrange your first visit.
+
+        <span class="section-kicker">STARTING WITH VITALITY</span>
+
+        <h2 class="heading">
+          A clearer path to
+          <em>your first visit.</em>
+        </h2>
+
+        <p class="lead">
+          Not sure what to do next? Here is a straightforward
+          way to begin a conversation with our practice.
         </p>
-        <div class="final-cta-actions">
-          <a class="button button-white" href="https://vitality-dental.co.uk/accepting-new-patients/">
-            Book an appointment <span class="button-arrow">↗</span>
+
+        <div class="journey-steps">
+
+          <article class="journey-step">
+            <span>01</span>
+            <h3>Get in touch</h3>
+            <p>
+              Call the practice or use the online appointment
+              booking service.
+            </p>
+          </article>
+
+          <article class="journey-step">
+            <span>02</span>
+            <h3>Tell us your needs</h3>
+            <p>
+              Let the team know whether you are a new patient
+              and what you would like help with.
+            </p>
+          </article>
+
+          <article class="journey-step">
+            <span>03</span>
+            <h3>Discuss your care</h3>
+            <p>
+              Your dentist can assess your oral health and
+              discuss appropriate treatment options.
+            </p>
+          </article>
+
+          <article class="journey-step">
+            <span>04</span>
+            <h3>Plan ahead</h3>
+            <p>
+              Understand the next steps and agree on a
+              suitable approach to your dental care.
+            </p>
+          </article>
+
+        </div>
+
+        <div class="journey-cta">
+
+          <p>
+            Have a question before booking? Contact the
+            practice directly. You do not need to work out
+            which treatment you need before getting in touch.
+          </p>
+
+          <a class="btn btn-light"
+            href="tel:01798872004">
+            Speak to our team
+            <span class="arrow">↗</span>
           </a>
-          <a class="button button-light" href="tel:+441798872004" style="border-color:rgba(255,255,255,.65);color:#fff;">
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PATIENT FEEDBACK -->
+
+    <section class="section feedback" id="feedback">
+
+      <div class="container">
+
+        <div class="feedback-header">
+
+          <div>
+            <span class="section-kicker">PATIENT FEEDBACK</span>
+            <h2 class="heading">
+              Experiences that
+              <em>matter.</em>
+            </h2>
+          </div>
+
+          <div>
+            <div class="rating-number">4.9</div>
+            <div class="rating-stars" aria-label="Five stars">
+              ★★★★★
+            </div>
+            <p class="review-note">
+              Google rating and review count displayed on
+              the practice website at the time of research.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="feedback-content">
+
+          <div class="rating-stars">★★★★★</div>
+
+          <p>
+            “As a very apprehensive patient, I am always
+            made to feel at ease.”
+          </p>
+
+          <span>
+            Patient feedback excerpt displayed on the
+            Vitality Dental website. Review wording shortened.
+          </span>
+
+        </div>
+
+        <p class="small-note" style="margin-top:22px">
+          The practice website displayed 254 Google reviews
+          alongside a 4.9 rating on 6 November 2026.
+          Ratings and review totals can change.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- MEMBERSHIP -->
+
+    <section class="section membership" id="membership">
+
+      <div class="container membership-grid">
+
+        <div class="membership-visual">
+
+          <span>VITALITY DENTAL MEMBERSHIP</span>
+
+          <strong>
+            A little more
+            peace of mind.
+          </strong>
+
+          <p>
+            Explore the practice's dental membership
+            option and its included benefits.
+          </p>
+
+          <span class="membership-price">From £23.50 / month</span>
+
+          <p class="small-note">
+            Price displayed on the practice website
+            at the time of research.
+          </p>
+
+        </div>
+
+        <div class="membership-copy">
+
+          <span class="section-kicker">DENTAL MEMBERSHIP</span>
+
+          <h2 class="heading">
+            Supporting your
+            <em>ongoing care.</em>
+          </h2>
+
+          <p>
+            Vitality offers a dental membership plan
+            designed to support regular preventive care.
+          </p>
+
+          <ul>
+            <li>Yearly review and hygienist</li>
+            <li>Personalised assessment</li>
+            <li>15% discount on most treatments</li>
+            <li>Worldwide dental insurance</li>
+          </ul>
+
+          <a class="btn btn-primary"
+            href="https://vitality-dental.co.uk/">
+            Explore membership details
+            <span class="arrow">↗</span>
+          </a>
+
+          <p class="small-note">
+            Membership terms, eligibility, exclusions and
+            current prices should be confirmed with the practice.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LOCATION -->
+
+    <section class="section location" id="location">
+
+      <div class="container location-grid">
+
+        <div class="location-art">
+
+          <svg viewBox="0 0 500 350"
+            role="img"
+            aria-label="Abstract location illustration representing Pulborough">
+
+            <path d="M0 260 C100 180 160 310 250 225
+              C340 140 410 230 500 140"
+              fill="none"
+              stroke="#9EB5C6"
+              stroke-width="3"/>
+
+            <path d="M0 290 C100 210 170 335 265 255
+              C355 180 420 260 500 175"
+              fill="none"
+              stroke="#80664F"
+              stroke-width="1.5"
+              opacity=".5"/>
+
+            <path d="M250 55
+              C207 55 180 85 180 124
+              C180 170 250 236 250 236
+              C250 236 320 170 320 124
+              C320 85 293 55 250 55Z"
+              fill="#80664F"/>
+
+            <circle cx="250" cy="120" r="30" fill="#FAF8F4"/>
+
+            <circle cx="250" cy="120" r="11" fill="#9EB5C6"/>
+
+            <path d="M70 90 L120 90 M95 65 V115"
+              stroke="#C5A77C"
+              stroke-width="2"
+              stroke-linecap="round"/>
+
+          </svg>
+
+        </div>
+
+        <div>
+
+          <span class="section-kicker">VISIT OUR PRACTICE</span>
+
+          <h2 class="heading">
+            Your local dentist
+            in <em>Pulborough.</em>
+          </h2>
+
+          <p>
+            Vitality Dental is located on Lower Street in
+            Pulborough, West Sussex, with patients travelling
+            from nearby towns and communities.
+          </p>
+
+          <div class="location-address">
+
+            <strong>Vitality Dental</strong>
+
+            <p>32 Lower Street</p>
+            <p>Pulborough, West Sussex</p>
+            <p>RH20 2BL, United Kingdom</p>
+
+          </div>
+
+          <p>
+            <strong>Telephone:</strong>
+            <a href="tel:01798872004">01798 872004</a>
+          </p>
+
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:info@vitality-dental.com">
+              info@vitality-dental.com
+            </a>
+          </p>
+
+          <div class="location-links">
+
+            <a class="text-link"
+              href="https://www.google.com/maps/search/?api=1&query=32+Lower+Street+Pulborough+West+Sussex+RH20+2BL"
+              target="_blank"
+              rel="noopener noreferrer">
+              Get directions ↗
+            </a>
+
+            <a class="text-link"
+              href="https://vitality-dental.co.uk/contact/">
+              Contact details ↗
+            </a>
+
+          </div>
+
+          <p class="small-note">
+            Nearby areas include Horsham, Billingshurst,
+            Petworth, Storrington, Midhurst and Arundel.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+
+    <section class="final-cta">
+
+      <div class="container">
+
+        <span class="section-kicker">
+          YOUR NEXT STEP STARTS HERE
+        </span>
+
+        <h2 class="heading">
+          Let's make your next dental visit
+          <em>a little easier.</em>
+        </h2>
+
+        <p>
+          Whether you are looking for routine care, considering
+          a treatment or simply have a question, our team
+          welcomes your enquiry.
+        </p>
+
+        <div class="final-actions">
+
+          <a class="btn btn-primary"
+            href="https://uk.dentalhub.online/soe/new/VITALITY?pid=UKMZD01"
+            target="_blank"
+            rel="noopener noreferrer">
+            Book an appointment ↗
+          </a>
+
+          <a class="btn btn-outline"
+            href="tel:01798872004">
             Call 01798 872004
           </a>
+
         </div>
+
       </div>
     </section>
+
   </main>
 
+  <!-- FOOTER -->
+
   <footer class="site-footer">
+
     <div class="container">
+
       <div class="footer-grid">
+
         <div class="footer-brand">
-          <a class="brand" href="#home" aria-label="Vitality Dental home">
-            <span class="brand-mark" aria-hidden="true">✳</span>
-            <span class="brand-name">
-              vitality
-              <small>Modern relaxed dental care</small>
-            </span>
+
+          <a class="brand" href="#home">
+            <span class="brand-name">vitality</span>
+            <span class="brand-tagline">Modern relaxed dental care</span>
           </a>
-          <p class="footer-about">
-            Private dental care in Pulborough, West Sussex, with a broad range
-            of treatments for individuals and families.
+
+          <p>
+            Private dental care in Pulborough, West Sussex.
+            A welcoming approach to general, cosmetic
+            and specialist dentistry.
           </p>
+
         </div>
 
-        <div class="footer-column">
-          <h4>Explore</h4>
+        <div class="footer-col">
+          <h3>Explore</h3>
+
           <ul>
-            <li><a href="#approach">Our approach</a></li>
+            <li><a href="#experience">Our approach</a></li>
             <li><a href="#treatments">Treatments</a></li>
-            <li><a href="#nervous-patients">Nervous patients</a></li>
-            <li><a href="#team">Our team</a></li>
-            <li><a href="#reviews">Patient feedback</a></li>
+            <li><a href="#nervous">Nervous patients</a></li>
+            <li><a href="#journey">First visit</a></li>
+            <li><a href="#membership">Membership</a></li>
           </ul>
         </div>
 
-        <div class="footer-column">
-          <h4>Patient information</h4>
+        <div class="footer-col">
+          <h3>Patient information</h3>
+
           <ul>
-            <li><a href="https://vitality-dental.co.uk/accepting-new-patients/">New patients</a></li>
-            <li><a href="https://vitality-dental.co.uk/faqs/">FAQs</a></li>
-            <li><a href="https://vitality-dental.co.uk/healthy-gums/">Healthy gums</a></li>
-            <li><a href="https://vitality-dental.co.uk/consultations/">Consultations</a></li>
-            <li><a href="https://vitality-dental.co.uk/contact/">Contact</a></li>
+            <li>
+              <a href="https://vitality-dental.co.uk/team/">
+                Our team
+              </a>
+            </li>
+            <li>
+              <a href="https://vitality-dental.co.uk/">
+                Dental fees
+              </a>
+            </li>
+            <li>
+              <a href="https://vitality-dental.co.uk/">
+                Patient FAQs
+              </a>
+            </li>
+            <li>
+              <a href="https://vitality-dental.co.uk/contact/">
+                Contact
+              </a>
+            </li>
           </ul>
         </div>
 
-        <div class="footer-column">
-          <h4>Contact</h4>
+        <div class="footer-col">
+          <h3>Get in touch</h3>
+
           <ul>
-            <li>32 Lower Street</li>
-            <li>Pulborough, West Sussex</li>
-            <li>RH20 2BL</li>
-            <li><a href="tel:+441798872004">01798 872004</a></li>
-            <li><a href="mailto:info@vitality-dental.com">info@vitality-dental.com</a></li>
+            <li>
+              <a href="tel:01798872004">01798 872004</a>
+            </li>
+            <li>
+              <a href="mailto:info@vitality-dental.com">
+                info@vitality-dental.com
+              </a>
+            </li>
+            <li>
+              32 Lower Street
+            </li>
+            <li>
+              Pulborough, RH20 2BL
+            </li>
+            <li>
+              <a href="https://www.cqc.org.uk/location/1-17429589401"
+                target="_blank"
+                rel="noopener noreferrer">
+                CQC registration ↗
+              </a>
+            </li>
           </ul>
         </div>
+
       </div>
 
       <div class="footer-bottom">
-        <span>© <span id="current-year">2026</span> Vitality Dental. All rights reserved.</span>
-        <span>Private dental practice · Pulborough, West Sussex</span>
+
+        <span>
+          © <span id="currentYear">2026</span> Vitality Dental.
+          Website redesign concept.
+        </span>
+
+        <span>
+          <a href="https://vitality-dental.co.uk/privacy-policy/">
+            Privacy information
+          </a>
+          ·
+          <a href="https://vitality-dental.co.uk/">
+            Official website
+          </a>
+        </span>
+
       </div>
+
     </div>
   </footer>
 
-  <!-- Exactly two persistent mobile conversion buttons -->
-  <div class="mobile-cta" aria-label="Quick contact options">
-    <a class="button button-light" href="tel:+441798872004">Call the practice</a>
-    <a class="button" href="https://vitality-dental.co.uk/accepting-new-patients/">Book appointment</a>
+  <!-- EXACTLY TWO MOBILE CTA BUTTONS -->
+
+  <div class="mobile-cta" aria-label="Quick contact actions">
+
+    <a class="mobile-call" href="tel:01798872004">
+      ☎ Call Now
+    </a>
+
+    <a class="mobile-book"
+      href="https://uk.dentalhub.online/soe/new/VITALITY?pid=UKMZD01"
+      target="_blank"
+      rel="noopener noreferrer">
+      Book Appointment ↗
+    </a>
+
   </div>
 
   <script>
-    (function () {
-      const menuButton = document.querySelector(".menu-toggle");
-      const navigation = document.querySelector(".main-nav");
-      const navigationLinks = document.querySelectorAll(".main-nav a");
+    /* Mobile navigation */
 
-      if (menuButton && navigation) {
-        menuButton.addEventListener("click", function () {
-          const isExpanded = menuButton.getAttribute("aria-expanded") === "true";
+    const menuToggle = document.getElementById("menuToggle");
+    const primaryNavigation = document.getElementById("primaryNavigation");
 
-          menuButton.setAttribute("aria-expanded", String(!isExpanded));
-          menuButton.setAttribute(
-            "aria-label",
-            isExpanded ? "Open navigation" : "Close navigation"
-          );
+    menuToggle.addEventListener("click", function () {
+      const isOpen = primaryNavigation.classList.toggle("open");
 
-          navigation.classList.toggle("is-open", !isExpanded);
-          document.body.classList.toggle("menu-open", !isExpanded);
-        });
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
 
-        navigationLinks.forEach(function (link) {
-          link.addEventListener("click", function () {
-            navigation.classList.remove("is-open");
-            menuButton.setAttribute("aria-expanded", "false");
-            menuButton.setAttribute("aria-label", "Open navigation");
-            document.body.classList.remove("menu-open");
-          });
-        });
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+      );
+    });
 
-        window.addEventListener("resize", function () {
-          if (window.innerWidth > 820) {
-            navigation.classList.remove("is-open");
-            menuButton.setAttribute("aria-expanded", "false");
-            menuButton.setAttribute("aria-label", "Open navigation");
-            document.body.classList.remove("menu-open");
-          }
-        });
-      }
+    /* Close mobile navigation after selecting a link */
 
-      const yearElement = document.getElementById("current-year");
-      if (yearElement) {
-        yearElement.textContent = new Date().getFullYear();
-      }
-    })();
+    primaryNavigation.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        primaryNavigation.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
+      });
+    });
+
+    /* Update copyright year */
+
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
   </script>
+
 </body>
 </html>
